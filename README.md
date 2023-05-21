@@ -1,4 +1,4 @@
 # BOOTCAMP REPOSITORY
-Check out some of the projects / exercises that a will be doing here:
+Check out some of the projects / exercises that I'm doing here:
 
-***Located on C/ d'en Llástics, 2 | Organized by Fundació Esplai***
+***Located in C/ d'en Llástics, 2 | Organized by Fundació Esplai***
