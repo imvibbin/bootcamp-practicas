@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6 - Form</title>
+</head>
+
+<body>
+    <style>
+        .section-form>img {
+            border: solid 10px red;
+        }
+    </style>
+    <section class="section-form">
+        <h1>Envío de datos mediante a un formulario</h1>
+        <form action="https://formsubmit.co/johnkvcode31@gmail.com" method="POST">
+            <label for="name">NAME</label>
+            <input type="text" name="name" placeholder="name" required><br>
+            <label for="email">EMAIL</label>
+            <input type="email" name="email" placeholder="email" required><br>
+            <button type="submit">Send</button>
+        </form>
+
+        <h2>Resultado del test:</h2>
+        <img src="./images/testform.PNG" alt="No image found">
+    </section>
+</body>
+
+</html>
