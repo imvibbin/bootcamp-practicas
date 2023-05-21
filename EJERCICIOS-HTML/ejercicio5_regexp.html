@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5 - Regexp</title>
+</head>
+
+<body>
+    <section class="form-section">
+        <h1>Validación de teléfono mediante expresiones regulares</h1>
+        <form action="POST" action="none">
+            <input type="tel" name="number" id="number" placeholder="Introduzca su número de telefono Español"
+                pattern="^(\+34[679]\d{8}|[679]\d{8})" title="Debe de ser un número español" required>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+</body>
+
+</html>
