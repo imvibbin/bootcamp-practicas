@@ -1,7 +1,7 @@
 # BOOTCAMP REPOSITORY
 ## Check out some of the projects / exercises that I'm doing here:
 
-To clone my repository just type / copy this following command:  
+:exclamation: To clone my repository just type / copy this following command:  
 
 >`git clone https://github.com/imvibbin/bootcamp-practicas.git`  
 ## Check list:
