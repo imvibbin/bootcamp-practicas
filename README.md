@@ -6,7 +6,7 @@ To clone my repository just type / copy this following command:
 >`git clone https://github.com/imvibbin/bootcamp-practicas.git`  
 ## Check list:
 :white_check_mark: GIT and Markdown exercises  
-:white_check_mark: Bloque HTML exercises  
+:white_check_mark: HTML block exercises  
 :x: HTML fundamental exercises  
 :x: CSS exercises  
 :x: Bootstrap exercises  
