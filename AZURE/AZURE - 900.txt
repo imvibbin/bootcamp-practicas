@@ -1,0 +1,16 @@
+AZURE - 900 
+
+On premise ->  
+
+TIPOS DE NUBE 
+- Nube pública: 
+    x 
+- Nube privada: 
+- Nube híbrida: 
+
+TIPOS DE GASTOS
+Capex -> 
+Opex -> 
+Región -> 
+Zona de disponibilidad-> 
+Par de regiones -> 
