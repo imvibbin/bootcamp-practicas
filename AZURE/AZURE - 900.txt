@@ -35,3 +35,5 @@
         x) Cada suscripción se mapea de manera inconsistente a cada centro. 
            Ej: El centro del suscripción1 (AZ1 -> Centro 1) puede ser diferente, suscripción2 (AZ1 -> Centro 2)
         x) Hay diferentes servicios como por ejemplo:
+            - Zona reduntante: se gestiona automaticamente al ser reduntante
+            - Zonal: se crea en una zona en concreto
