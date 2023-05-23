@@ -1,16 +1,37 @@
-AZURE - 900 
+|## AZURE - 900 ##|
 
-On premise ->  
+|# TIPOS DE NUBE 
+    - Nube pública: 
+        x) Infraestractura proporcionada por una empresa AZURE por ejemplo, donde
+        nosotros no necesitamos comprar o tener ningún tipo de instalación. 
+        Tu pagas por lo que usas "suscripción".
+        Si usas mas pagas mas si usas menos, menos.
+        Claremente se hostea externamente.
+    - Nube privada: 
+        x) Infraestrucutra propia, pagas  
+    - Nube híbrida: 
+        x)   
 
-TIPOS DE NUBE 
-- Nube pública: 
-    x 
-- Nube privada: 
-- Nube híbrida: 
+|# TIPOS DE GASTOS
+    - Capex -> gastos relacionados con el largo plazo, como por ejemplo comprar la infraestructura
+    - Opex -> gastos relacionados con los servicios como podría ser suscripciones o los pagos a los empleados 
 
-TIPOS DE GASTOS
-Capex -> 
-Opex -> 
-Región -> 
-Zona de disponibilidad-> 
-Par de regiones -> 
+|# REIGÓN AZURE
+    Una región es una área geografica del planeta en el que contiene por lo menos 1 o una serie de centros de datos
+    conectados a una red de baja latencia.
+    Al implementarse un recurso se suele preguntar al usuario a que región la quiere implementar.   
+    - Regiones comerciales: las que contratan empresas / entidades
+    - Regiones excepcionales:
+        x) China Azure: gestionado por una empresa China llamada 21vianet y destinado
+        únicamente para empresas o entidades chinas.
+        x) Gobierno US: centro destinado solamente para entidades relacionadas con el gobierno. 
+
+    Las regiones estan en pares, para evitar asi 
+
+|# ZONAS DE DISPONIBILIDAD 
+        x) Normalmente cada zona de disponibilidad cuenta con diferentes centros que pueden ser reduntantes
+        y así evitar problemas mayores
+        x) Se distribuyen los servicios entre los centros disponibles
+        x) Cada suscripción se mapea de manera inconsistente a cada centro. 
+           Ej: El centro del suscripción1 (AZ1 -> Centro 1) puede ser diferente, suscripción2 (AZ1 -> Centro 2)
+        x) Hay diferentes servicios como por ejemplo:
