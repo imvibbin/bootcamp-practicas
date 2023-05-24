@@ -37,3 +37,100 @@
         x) Hay diferentes servicios como por ejemplo:
             - Zona reduntante: se gestiona automaticamente al ser reduntante
             - Zonal: se crea en una zona en concreto
+        
+|# SERVICIOS DE AZURE 
+
+GESTIÓN DE USUARIOS / EQUIPOS
+    Azure Governance: 
+        x) las definiciones de iniciativa son conjuntos de definiciones de políticas con el propósito de ayudar
+        a rastrear el estado de cumplimiento para un objectivo más amplio. 
+ 
+    Una asignación de iniciativa es una definición de iniciativa que se asigna a un alcance específico.
+    
+    Azure Policy (Política de Azure):
+        x) es un servicio que se usa para crear, asignar y administrar políticas 
+    
+    Azure Locks:
+        x) evita la eliminación accidental de recursos
+        Niveles de bloqueo: 
+            - CanNotDelete: no se puede eliminar recurso
+            - ReadOnly: un recurso puede leerse pero no borrarse o actualizarse
+            *esto se aplica a todos una vez que se ha establecido un nivel de bloqueo hasta que se elimine el nivel de bloqueo* 
+
+    Azure Active Directory:
+        x) incluye servicios de identidad y acceso:
+            - incluyen administración de aplicaciones
+            - autenticación
+            - servicios de identidad de empresa a empresa
+            - servicios de idenditad de empresa a cliente
+            administración de dispositivos e inicio de sesión único
+
+        x) no proporciona directamente la autorización o la dministración del servidor local.
+
+TRÁFICO DE RED  
+    Azure Virtual Network:
+        x) permite que las máquinas virtuales de Azure se comuniquen entre sí de forma segura.
+    Azure Load Balancer:
+        x) hace que sea más fácil proporcionar escalabilidad y alta disponibilidad para las aplicaciones.
+    VPN Gateway:
+        x) se usa para enviar tráfico cifrado entre un sitio local y una red virtual de Azure.
+    Azure Application Gateway:
+        x) permite la administración del tráfico a las aplicaciones web.
+    Content Delivery Network (CDN):
+        x) es un método de entrega en el que se reduce la latencia.
+    
+BASES DE DATOS 
+    Cosmos DB:
+        x) es un servicio que admite datos sin esquema y permite aplicaciones de alta respuesta y siempre activas.
+    Azure SQL Database:
+        x) es un servicio de base de datos relacional utilizado para aplicaciones y sitios web basados en datos.
+    Azure Migration Service:
+        x) permite el movimiento de datos de múltiples fuentes a las plataformas de datos de Azure.
+    Azure SQL Data Warehouse:
+        x) se usa para análisis empresariales como Power BI.
+    Azure Data Lake: 
+        x) se usa para simplificar datos grandes
+    
+    OTROS 
+    Azure DevOps Services (antes Visual Studio Team Services): 
+        x) proporciona herramientas de colaboración para el desarrollo, como repositorios privados gratuitos de Git y tableros Kanban confgurables.
+    Azure DevTest Labs:
+        x) permite a los desarrolladores y testers crear rápidamente entornos de Azure.
+    Azure Portal: 
+        x) interfaz gráfica de usuario que se puede usar par administrar casi todas las características de Azure.
+    
+|# CAPAS DE SEGURIDAD
+    Capas de más externa a mas interna:
+        1. Seguridad física 
+        2. Identidad y acceso 
+        3. Perímetro 
+        4. Red
+        5. Aplicación y los datos
+
+|# DECLARACIONES
+    Declaración de privacidad de Microsoft:
+        x) está destinada a proporcionar apertura y honestidad sobre cómo Microsoft trata 
+        los datos personales en sus productos y servicios    
+    
+    Compliance Score: 
+        x) ayuda a las organizaciones a rastrear el progreso y reducir la exposición 
+        al riesgo mediante la priorización de los controles de auditoría
+
+|# SUSCRIPCIÓN AZURE
+    Cuenta gratuita:
+        x) válida por 30 días e incluye un crédito de 200$
+    Cuenta PayAsYouGo:
+        x) requiere que una organización adjunte una tarjeta de crédito o débito a la cuenta
+    Ofertas:
+        x) se extienden a suscripciones de Visual Studio, miembros de Imagine, miembros de Partner Network
+        y miembros de BizSpark
+
+|# ALMACENAMIENTOS AZURE
+    Azure Blob Storage:
+        x) es el más adecuado para almacenar vídeos y archivos binarios
+    Azure File Storage:
+        x) se utiliza mejor para los archivos compartidos
+    Azure Table Storage:
+        x) es el más adecuado para datos NoSQL
+    Azure Queue Storage:
+        x) almacena mensajes enviados entre aplicaciones
