@@ -7,12 +7,52 @@
         Tu pagas por lo que usas "suscripción".
         Si usas mas pagas mas si usas menos, menos.
         Claremente se hostea externamente.
-    - Nube privada: 
-        x) Infraestrucutra propia, pagas  
-    - Nube híbrida: 
-        x)   
+    
+        Características:
+            - No hay gastos de capital para escalar verticalmente
+            - Las aplicaciones pueden aprovisionarse y desaprovisionarse rápidamente.
+            - Las organizaciones solo pagan pr lo que usan
+            - Las organizaciones no tienen un control total de los recursos y la seguridad
 
-|# TIPOS DE GASTOS
+    - Nube privada: 
+        x) Infraestrucutra propia, on premise. Donde una misma empresa paga por los gastos
+        de los diferentes componentes necesario por tanto un mayor gasto a cambio de tener control
+        total de los recursos obtenidos. 
+
+        Características: 
+            - Las organizaciones tienen un control total de los recursos y la seguridad.
+            - Los datos no se colocan con los datos de otras organizaciones.
+            - Debe adquirirse hardware parala puesta en funcionamiento y el mantenimiento
+            - Las organizaciones son responsables del mantenimiento y las actualizaciones del hardware.
+
+    - Nube híbrida: 
+        x) Uso de un entorno informático que usa nubes públicas y privadas en un entonrno interconectado.
+
+        Características: 
+            - Proporciona la máxima flexibilidad.
+            - Las organizaciones determinan dónde se van a ejecutar sus aplicaciones.
+            - Las organizaciones controlan la seguridad, el cumplimiento o los requisitos legales.
+
+    - Nubes múltiples:
+        x) Utilización de varias nubes, donde se usan varios proveedores de nube pública.
+        Aquí se usan diferentes características de diferentes proveedores de nube.
+        
+|# MODELO BASADO EN EL CONSUMO 
+    Gastos de capital
+        x) son un gasto por adelantado único para comprar o proteger recursos tangibles. Un edificio nuevo, volver a pavimentar 
+        el aparcamiento, crear un centro de datos o comprar un coche de empresa son ejemplos de gastos de capital.
+
+    Gastos operativos
+        x) es gastar dinero en servicios o productos a lo largo del tiempo. Alquilar un 
+        centro de convenciones, alquilar un vehículo de empresa o suscribirse a servicios 
+        en la nube son ejemplos de gastos operativos.
+        
+        - Sin costes por adelantado.
+        - No es necesario comprar ni administrar infraestructuras costosas que es posible que los usuarios no 
+        aprovechen todo su ptencial.
+        - Se puede pagar para ontener más recursos cuando se necesiten.
+        - Se puede dejar de pagar por los recursos que ya no se necesiten.
+
     - Capex -> gastos relacionados con el largo plazo, como por ejemplo comprar la infraestructura
     - Opex -> gastos relacionados con los servicios como podría ser suscripciones o los pagos a los empleados 
 
@@ -38,6 +78,18 @@
             - Zona reduntante: se gestiona automaticamente al ser reduntante
             - Zonal: se crea en una zona en concreto
         
+|# AZURE
+AZURE ARC 
+    x) es un conjunto de tecnologías que ayuda a administrar el entorno en la nube. Azure Arc puede ayudar 
+    a administrar el entorno de nube, tanto si se trata de una nube pública exclusiva de Azure, una nube 
+    privada en el centro de datos, una configuración híbrida o incluso un entorno de varias nubes que se 
+    ejecuta en varios proveedores de la nube a la vez.
+
+AZURE VMWARE SOLUTION
+    x) permite ejecutar las cargas de trabajo de VMware en Azure con una integración y escalabilidad perfectas. 
+    Esto significa que puede migrar sus cargas de trabajo de VMware a Azure sin tener que reescribir sus 
+    aplicaciones.
+
 |# SERVICIOS DE AZURE 
 
 GESTIÓN DE USUARIOS / EQUIPOS
@@ -134,3 +186,4 @@ BASES DE DATOS
         x) es el más adecuado para datos NoSQL
     Azure Queue Storage:
         x) almacena mensajes enviados entre aplicaciones
+
