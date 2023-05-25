@@ -1,5 +1,7 @@
 # BOOTCAMP REPOSITORY
+
 ## BOOTCAMP OBJECTIVES
+
 Hi my name is John Kervin and I am 21 years of age.  
 I want to be a good programmer, I want to learn new things and that's why I enrolled in this bootcamp, my main objective is to increase my knowledge and improve as a programmer.  
 My favorite programming languages are JavaScript and Java.
@@ -16,6 +18,7 @@ If you want to clone my repository just *type / copy* the following command:
 <br>
 
 ## Check list:
+
 :white_check_mark: GIT and Markdown exercises  
 :white_check_mark: HTML block exercises  
 :x: HTML fundamental exercises  
