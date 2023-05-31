@@ -1,4 +1,4 @@
-|## AZURE - 900 ##|
+|## AZ900 ##|
 
 |# TIPOS DE NUBE 
     - Nube pública: 
@@ -187,3 +187,19 @@ BASES DE DATOS
     Azure Queue Storage:
         x) almacena mensajes enviados entre aplicaciones
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+|## DP900 ##
+
+Azure can actually provide DB services like for example:
+- Azure SQL DB
+- Cosmos DB
+- PostgreSqlmysql
+
+    These are some of the benefits that can provide you:
+    -   Evergreen
+    -   Auto Backup 
+    -   Native HA 
+    -   Scale 
+
+    You don't actually have an Operating System
