@@ -6,5 +6,5 @@
 
 ## 2. Toolness github
 
-![img](./capturas/1.PNG)
+![img](./capturas/2.PNG)
 

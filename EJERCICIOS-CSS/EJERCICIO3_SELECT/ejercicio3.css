@@ -1,0 +1,87 @@
+/* Ej1 */
+* {
+  /* css content */
+}
+
+/* Ej2 */
+p {
+  /* css content */
+}
+
+/* Ej3 */
+#title-1 {
+  /* css content */
+}
+
+/* Ej4 */
+.bg-yellow {
+  /* css content */
+}
+
+/* Ej5 */
+[id] {
+  /* css content */
+}
+
+/* Ej6 */
+[id="title-1"] {
+  /* css content */
+}
+
+/* Ej7 */
+[href="https://www.yahoo.com"]
+{
+  /* css content */
+}
+
+/* Ej8 */
+[class^="title"] {
+  /* css content */
+}
+
+/* Ej9 */
+[href$=".com"] {
+  /* css content */
+}
+
+/* Ej10 */
+[class|="title"] {
+  /* css content */
+}
+
+/* Ej11 */
+[href*="127"] {
+  /* css content */
+}
+
+/* Ej12 */
+[href^="http"] {
+  /* css content */
+}
+
+/* Ej13 */
+a,
+p,
+h1 {
+  /* css content */
+}
+
+/* Ej14 */
+main > p {
+  /* css content */
+}
+
+/* Ej15 */
+h1 + * {
+  /* css content */
+}
+
+/* Ej16 */
+h1 ~ * {
+  /* css content */
+}
+
+/* Ej17 */
+main > * {
+  /* css content */
+}
