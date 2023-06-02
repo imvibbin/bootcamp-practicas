@@ -1,0 +1,23 @@
+* {
+  background-color: peachpuff;
+  background-color: peachpuff;
+}
+
+.title-container {
+  color: red;
+}
+
+.title-container :hover {
+  color: yellow;
+}
+
+p::selection {
+  background-color: black;
+  color: white;
+}
+
+.container {
+  column-count: 3;
+  column-width: 40px;
+  column-rule: 2px solid red;
+}
