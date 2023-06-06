@@ -1,0 +1,29 @@
+* {
+  background-color: antiquewhite;
+}
+
+.div-content {
+  width: 300px;
+  margin: 35px auto;
+  padding: 4px 15px 4px;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid black;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  font-size: 25px;
+}
+
+.div-content:nth-child(1) {
+  text-align: left;
+}
+
+.div-content:nth-child(2) {
+  text-align: center;
+}
+
+.div-content:nth-child(3) {
+  text-align: right;
+}
