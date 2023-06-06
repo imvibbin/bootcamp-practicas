@@ -2,12 +2,10 @@
   background-color: rgb(234, 245, 255);
 }
 
-.table-title {
-  margin: 0 auto;
-  width: 200px;
+caption span {
   font-size: 22px;
   font-weight: bolder;
-  text-align: center;
+  background-color: dodgerblue;
 }
 
 .table-main {
@@ -25,11 +23,10 @@ table,
   background-color: rgb(251, 214, 173);
 }
 
-thead td {
+thead th {
   padding-top: 10px;
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
-  font-weight: bolder;
 }
 
 .table-content > td {
@@ -39,6 +36,5 @@ thead td {
 
 tfoot * {
   font-size: 20px;
-  font-weight: bold;
   background-color: dodgerblue;
 }
