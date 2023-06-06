@@ -1,0 +1,19 @@
+p {
+  font-size: 35px;
+}
+
+div {
+  width: 40vw;
+  height: 30vh;
+  margin: 30px 0 30px;
+}
+
+.overflow-first {
+  background-color: greenyellow;
+  overflow: hidden;
+}
+
+.overflow-second {
+  background-color: green;
+  overflow: scroll;
+}
