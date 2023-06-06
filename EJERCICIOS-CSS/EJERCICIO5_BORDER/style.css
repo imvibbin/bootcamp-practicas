@@ -1,0 +1,11 @@
+.border-div {
+  width: 370px;
+  border-top: 5px dotted green;
+  border-left: 7px double black;
+  border-right: 10px dashed blue;
+  border-bottom: 3px solid red;
+}
+
+.border-div > div {
+  padding: 30px 40px 30px;
+}
