@@ -1,0 +1,47 @@
+* {
+  background-color: rgb(234, 245, 255);
+}
+
+.table-title {
+  margin: 0 auto;
+  width: 200px;
+  font-size: 22px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.table-main {
+  width: 600px;
+  margin: 0 auto;
+  border: 4px solid black;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+table,
+.table-head *,
+.table-content * {
+  background-color: rgb(251, 214, 173);
+}
+
+thead td {
+  padding-top: 10px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  font-weight: bolder;
+}
+
+.table-content > td {
+  border-left: 1px solid black;
+  border-bottom: 2px solid black;
+}
+
+table * {
+  text-align: center;
+}
+
+tfoot * {
+  font-size: 20px;
+  font-weight: bold;
+  background-color: dodgerblue;
+}
