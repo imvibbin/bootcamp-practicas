@@ -7,13 +7,13 @@
   color: red;
 }
 
-.title-container :hover {
+.title-container > span:hover {
   color: yellow;
 }
 
 p::selection {
-  background-color: black;
-  color: white;
+  background-color: yellow;
+  color: red;
 }
 
 .container {
