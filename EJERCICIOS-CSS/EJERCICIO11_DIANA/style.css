@@ -1,0 +1,72 @@
+.div-container {
+  width: 800px;
+  height: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.div-aros {
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  position: absolute;
+
+  background-color: red;
+  border: 20px solid white;
+
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.aro1 {
+  width: 40px;
+  height: 40px;
+  outline: 20px solid red;
+  z-index: 1000;
+}
+
+.aro2 {
+  width: 120px;
+  height: 120px;
+  outline: 20px solid red;
+  z-index: 500;
+}
+
+.aro3 {
+  width: 200px;
+  height: 200px;
+  outline: 20px solid red;
+  z-index: 100;
+}
+
+.aro4 {
+  width: 320px;
+  height: 320px;
+  background-color: white;
+  border: 20px solid red;
+  z-index: 1;
+}
+
+.aro3,
+.aro4 {
+  border-radius: 200px;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -ms-border-radius: 200px;
+  -o-border-radius: 200px;
+}
+
+.aro-ext {
+  border-radius: 200px;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -ms-border-radius: 200px;
+  -o-border-radius: 200px;
+}
