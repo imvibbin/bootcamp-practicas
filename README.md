@@ -21,8 +21,8 @@ If you want to clone my repository just *type / copy* the following command:
 
 :white_check_mark: GIT and Markdown exercises  
 :white_check_mark: HTML block exercises  
-:x: HTML fundamental exercises  
-:x: CSS exercises  
+:white_check_mark: HTML fundamental exercises  
+:x: CSS exercises (in progress)
 :x: Bootstrap exercises  
 :x: JavaScript and JQuery exercises  
 :x: MySQL exercises  
