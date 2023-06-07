@@ -55,7 +55,8 @@
 }
 
 .aro3,
-.aro4 {
+.aro4,
+.aro-ext {
   border-radius: 200px;
   -webkit-border-radius: 200px;
   -moz-border-radius: 200px;
@@ -63,10 +64,37 @@
   -o-border-radius: 200px;
 }
 
+.aro-ext,
+.mira-x,
+.mira-y {
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  position: absolute;
+}
+
 .aro-ext {
-  border-radius: 200px;
-  -webkit-border-radius: 200px;
-  -moz-border-radius: 200px;
-  -ms-border-radius: 200px;
-  -o-border-radius: 200px;
+  width: 340px;
+  height: 340px;
+  border: 20px solid gainsboro;
+  box-shadow: 2px 2px black;
+  z-index: 1500;
+}
+
+.mira-x {
+  height: 2px;
+  width: 380px;
+  background-color: black;
+  z-index: 1600;
+}
+
+.mira-y {
+  height: 380px;
+  width: 2px;
+  background-color: black;
+  z-index: 1600;
 }
