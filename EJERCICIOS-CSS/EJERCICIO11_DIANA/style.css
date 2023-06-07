@@ -6,11 +6,11 @@
 }
 
 .div-aros {
-  border-radius: 100px;
+  -o-border-radius: 100px;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
   -ms-border-radius: 100px;
-  -o-border-radius: 100px;
+  border-radius: 100px;
   background-color: red;
   border: 20px solid white;
 }
@@ -59,11 +59,11 @@
 .aro3,
 .aro4,
 .aro-ext {
-  border-radius: 200px;
+  -o-border-radius: 200px;
   -webkit-border-radius: 200px;
   -moz-border-radius: 200px;
   -ms-border-radius: 200px;
-  -o-border-radius: 200px;
+  border-radius: 200px;
 }
 
 .aro-ext {
