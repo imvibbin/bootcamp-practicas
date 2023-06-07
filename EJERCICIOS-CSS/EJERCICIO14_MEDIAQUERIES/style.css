@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.div-section-container {
+  width: 80vw;
+  margin: 0 auto;
+  border: solid;
+}
+
+.section-second,
+.section-third,
+.section-fourth {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.section-first div,
+.section-second div,
+.section-third div,
+.section-fourth div {
+  display: inline-block;
+}
+
+.section-first {
+  text-align: center;
+}
+
+.section-first div {
+  width: 38%;
+  height: 15%;
+  background-color: orange;
+}
+
+.section-first-div-1 {
+  margin-right: 2%;
+}
+
+.section-second {
+  text-align: center;
+}
+
+.section-second-div-1 {
+  width: 78%;
+  height: 50%;
+  background-color: yellow;
+}
+
+.section-third {
+  text-align: center;
+}
+
+.section-third div {
+  background-color: dodgerblue;
+  width: 25%;
+  height: 40%;
+}
+
+.section-third-div-2 {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.section-fourth {
+}
