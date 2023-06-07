@@ -1,0 +1,11 @@
+.section-container-content {
+  float: left;
+}
+
+.section-container-content-text {
+  width: 500px;
+}
+
+.section-container-content-img {
+  width: 700px;
+}
