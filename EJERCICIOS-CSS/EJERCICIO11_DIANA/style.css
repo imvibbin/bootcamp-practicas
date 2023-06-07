@@ -1,5 +1,5 @@
 .div-container {
-  width: 800px;
+  width: 600px;
   height: 600px;
   margin: 0 auto;
   position: relative;
@@ -11,18 +11,20 @@
   -moz-border-radius: 100px;
   -ms-border-radius: 100px;
   -o-border-radius: 100px;
-  position: absolute;
-
   background-color: red;
   border: 20px solid white;
+}
 
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
+.div-aros,
+.aro-ext,
+.mira-x,
+.mira-y {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
 }
 
 .aro1 {
@@ -62,19 +64,6 @@
   -moz-border-radius: 200px;
   -ms-border-radius: 200px;
   -o-border-radius: 200px;
-}
-
-.aro-ext,
-.mira-x,
-.mira-y {
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  position: absolute;
 }
 
 .aro-ext {
