@@ -20,11 +20,11 @@
 .section-colors {
   width: 13vw;
   height: 13vw;
-  border-radius: 100vw;
+  -o-border-radius: 100vw;
   -webkit-border-radius: 100vw;
   -moz-border-radius: 100vw;
   -ms-border-radius: 100vw;
-  -o-border-radius: 100vw;
+  border-radius: 100vw;
 }
 
 .section-colors,
