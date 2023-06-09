@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&family=Lexend+Deca&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 25%;
+}
+
+p {
+  color: hsla(0, 0%, 100%, 0.75);
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+h1 {
+  padding: 10% 0;
+  color: hsl(0, 0%, 95%);
+  font-family: "Big Shoulders Display", cursive;
+  font-size: 45px;
+  font-weight: 700;
+}
+
+button {
+  width: 140px;
+  padding: 2vh;
+  background-color: white;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+
+  -webkit-border-radius: 2vw;
+  -moz-border-radius: 2vw;
+  -ms-border-radius: 2vw;
+  -o-border-radius: 2vw;
+  border-radius: 2vw;
+  border: none;
+
+  bottom: 10%;
+  position: absolute;
+}
+
+@media (max-width: 1440px) and (min-width: 375px) {
+  .main-container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 100vh;
+  }
+
+  .container-div {
+    width: 23vw;
+    height: 35vw;
+    display: flex;
+    flex-direction: column;
+    padding: 4%;
+    position: relative;
+  }
+
+  .main-container-sedans {
+    border-top-left-radius: 1vh;
+    border-bottom-left-radius: 1vh;
+    background-color: hsl(31, 77%, 52%);
+  }
+
+  .main-container-suvs {
+    background-color: hsl(184, 100%, 22%);
+  }
+
+  .main-container-luxury {
+    border-top-right-radius: 1vh;
+    border-bottom-right-radius: 1vh;
+    background-color: hsl(179, 100%, 13%);
+  }
+
+  .main-container-sedans button {
+    color: hsl(31, 77%, 52%);
+  }
+  .main-container-suvs button {
+    color: hsl(184, 100%, 22%);
+  }
+  .main-container-luxury button {
+    color: hsl(179, 100%, 13%);
+  }
+}
+
+@media (max-width: 375px) {
+  .main-container {
+    margin: 0 auto;
+    display: flex;
+    width: 80vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .container-div {
+    width: 23vw;
+    height: 35vw;
+    display: flex;
+    flex-direction: column;
+    padding: 4%;
+    position: relative;
+  }
+
+  .main-container-sedans {
+    border-top-left-radius: 1vh;
+    border-bottom-left-radius: 1vh;
+    background-color: hsl(31, 77%, 52%);
+  }
+
+  .main-container-suvs {
+    background-color: hsl(184, 100%, 22%);
+  }
+
+  .main-container-luxury {
+    border-top-right-radius: 1vh;
+    border-bottom-right-radius: 1vh;
+    background-color: hsl(179, 100%, 13%);
+  }
+
+  .main-container-sedans button {
+    color: hsl(31, 77%, 52%);
+  }
+  .main-container-suvs button {
+    color: hsl(184, 100%, 22%);
+  }
+  .main-container-luxury button {
+    color: hsl(179, 100%, 13%);
+  }
+}
