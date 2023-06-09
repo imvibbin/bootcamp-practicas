@@ -1,0 +1,90 @@
+/* 
+* * GLOBAL PROPERTIES
+ */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* 
+* * << HEADER >>
+* * --> Navbar properties: 
+*/
+.container-navbar {
+  padding: 2vh 3vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-navbar-image {
+  width: 10%;
+  height: 10%;
+}
+
+.container-navbar-image:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.container-navbar-list {
+  width: 30%;
+  text-align: right;
+}
+
+.container-navbar-list li {
+  padding: 3%;
+  display: inline-block;
+}
+
+.container-navbar-list li:hover {
+  color: #00b172;
+  cursor: pointer;
+}
+
+/* 
+* * << HEADER >>
+* * --> Banner properties: 
+*/
+.container-banner {
+  height: 80vh;
+  background-image: url(../images/landing.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.container-banner h1 {
+  font-size: 4em;
+  padding: 2vh;
+}
+
+.container-banner p {
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.container-banner h1,
+.container-banner p {
+  color: white;
+}
+
+/*
+Colors:
+
+Text: 1A1A1A
+Green: #00B172
+White: #FFF
+
+*/
