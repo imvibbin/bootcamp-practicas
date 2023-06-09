@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 15vh;
+  background-color: #fe0000;
+}
+
+nav {
+  height: 5vh;
+  background-color: #007fff;
+}
+
+section {
+  width: 70vw;
+  height: 75vh;
+  background-color: #fec6c5;
+  float: left;
+}
+
+aside {
+  width: 28vw;
+  height: 75vh;
+  background-color: #feb0fe;
+  float: right;
+}
+
+footer {
+  height: 5vh;
+  background-color: #80ff00;
+  clear: both;
+}

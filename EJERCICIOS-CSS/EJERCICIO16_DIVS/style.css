@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&family=Lexend+Deca&display=swap");
+
+/** 
+ * * GLOBAL PROPERTIES
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 35%;
+}
+
+p {
+  color: hsla(0, 0%, 100%, 0.75);
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+h1 {
+  padding: 10% 0;
+  color: hsl(0, 0%, 95%);
+  font-family: "Big Shoulders Display", cursive;
+  font-size: 45px;
+  font-weight: 700;
+}
+
+button {
+  width: 140px;
+  padding: 2vh;
+  background-color: white;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  border: none;
+  border-radius: 1000px;
+  bottom: 10%;
+  position: absolute;
+}
+
+.main-container-sedans button {
+  color: hsl(31, 77%, 52%);
+}
+
+.main-container-suvs button {
+  color: hsl(184, 100%, 22%);
+}
+
+.main-container-luxury button {
+  color: hsl(179, 100%, 13%);
+}
+
+/* On hover */
+.main-container-sedans button:hover {
+  background-color: hsl(31, 77%, 52%);
+}
+
+.main-container-suvs button:hover {
+  background-color: hsl(184, 100%, 22%);
+}
+
+.main-container-luxury button:hover {
+  background-color: hsl(179, 100%, 13%);
+}
+
+button:hover {
+  outline: 2px solid white;
+  color: white;
+  cursor: pointer;
+}
+
+.main-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  height: 100vh;
+}
+
+/**
+* * DESKTOP VIEW 
+* * Properties for desktop view 
+*/
+@media (max-width: 100vw) and (min-width: 375px) {
+  .container-div {
+    width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    position: relative;
+  }
+
+  .main-container-sedans {
+    border-top-left-radius: 1vh;
+    border-bottom-left-radius: 1vh;
+    background-color: hsl(31, 77%, 52%);
+  }
+
+  .main-container-suvs {
+    background-color: hsl(184, 100%, 22%);
+  }
+
+  .main-container-luxury {
+    border-top-right-radius: 1vh;
+    border-bottom-right-radius: 1vh;
+    background-color: hsl(179, 100%, 13%);
+  }
+}
+
+/**
+* * MOBILE VIEW 
+* * Properties for mobile view 
+*/
+@media (width <= 375px) {
+  .main-container {
+    padding: 7vh 0 7vh 0;
+    height: fit-content;
+    flex-direction: column;
+  }
+
+  .container-div {
+    width: 300px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    padding: 15%;
+    position: relative;
+  }
+
+  .main-container-sedans {
+    border-top-left-radius: 1vh;
+    border-top-right-radius: 1vh;
+    background-color: hsl(31, 77%, 52%);
+  }
+
+  .main-container-suvs {
+    background-color: hsl(184, 100%, 22%);
+  }
+
+  .main-container-luxury {
+    border-bottom-left-radius: 1vh;
+    border-bottom-right-radius: 1vh;
+    background-color: hsl(179, 100%, 13%);
+  }
+}

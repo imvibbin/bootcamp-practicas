@@ -1,28 +1,30 @@
 .div-container {
-  width: 800px;
+  width: 600px;
   height: 600px;
   margin: 0 auto;
   position: relative;
 }
 
 .div-aros {
-  border-radius: 100px;
+  -o-border-radius: 100px;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
   -ms-border-radius: 100px;
-  -o-border-radius: 100px;
-  position: absolute;
-
+  border-radius: 100px;
   background-color: red;
   border: 20px solid white;
+}
 
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
+.div-aros,
+.aro-ext,
+.mira-x,
+.mira-y {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
 }
 
 .aro1 {
@@ -55,18 +57,33 @@
 }
 
 .aro3,
-.aro4 {
-  border-radius: 200px;
+.aro4,
+.aro-ext {
+  -o-border-radius: 200px;
   -webkit-border-radius: 200px;
   -moz-border-radius: 200px;
   -ms-border-radius: 200px;
-  -o-border-radius: 200px;
+  border-radius: 200px;
 }
 
 .aro-ext {
-  border-radius: 200px;
-  -webkit-border-radius: 200px;
-  -moz-border-radius: 200px;
-  -ms-border-radius: 200px;
-  -o-border-radius: 200px;
+  width: 340px;
+  height: 340px;
+  border: 20px solid gainsboro;
+  box-shadow: 2px 2px black;
+  z-index: 1600;
+}
+
+.mira-x {
+  height: 2px;
+  width: 380px;
+  background-color: black;
+  z-index: 1500;
+}
+
+.mira-y {
+  height: 380px;
+  width: 2px;
+  background-color: black;
+  z-index: 1500;
 }
