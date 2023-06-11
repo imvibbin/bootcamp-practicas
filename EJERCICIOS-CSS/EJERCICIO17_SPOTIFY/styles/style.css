@@ -14,34 +14,35 @@
 * * << HEADER >>
 * * --> Navbar properties: 
 */
-.container-navbar {
+.header-navbar {
   padding: 2vh 3vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.container-navbar-image {
+.header-navbar-image {
   width: 10%;
   height: 10%;
 }
 
-.container-navbar-image:hover {
+.header-navbar-image:hover {
   cursor: pointer;
   opacity: 0.8;
 }
 
-.container-navbar-list {
+.header-navbar-list {
   width: 30%;
   text-align: right;
 }
 
-.container-navbar-list li {
+.header-navbar-list li {
   padding: 3%;
   display: inline-block;
+  font-weight: 500;
 }
 
-.container-navbar-list li:hover {
+.header-navbar-list li:hover {
   color: #00b172;
   cursor: pointer;
 }
@@ -50,7 +51,7 @@
 * * << HEADER >>
 * * --> Banner properties: 
 */
-.container-banner {
+.header-banner {
   height: 80vh;
   background-image: url(../images/landing.jpg);
   background-size: cover;
@@ -65,20 +66,69 @@
   text-align: center;
 }
 
-.container-banner h1 {
+.header-banner h1 {
   font-size: 4em;
   padding: 2vh;
 }
 
-.container-banner p {
+.header-banner p {
   font-size: 20px;
   font-weight: 100;
 }
 
-.container-banner h1,
-.container-banner p {
+.header-banner h1,
+.header-banner p {
   color: white;
 }
+
+/* 
+* * << SECTION >>
+* * --> Section properties: 
+ */
+.section-container {
+  height: 45vh;
+  padding: 2% 3%;
+  text-align: center;
+}
+
+.section-title {
+  margin: 0 auto 2% auto;
+  width: fit-content;
+  padding-bottom: 0.5%;
+  border-bottom: 2px solid #00b172;
+}
+
+.section-container-title {
+  font-size: 30px;
+}
+
+.section-content {
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: fit-content;
+}
+
+.section-content-images {
+  width: 25%;
+}
+
+.section-contents h2 {
+  color: #00b172;
+  margin: 3% 0;
+}
+
+/*  
+TODO: Need to style the last section
+*/
 
 /*
 Colors:
