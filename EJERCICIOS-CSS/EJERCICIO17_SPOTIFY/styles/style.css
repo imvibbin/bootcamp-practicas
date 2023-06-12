@@ -1,8 +1,14 @@
 /* 
-* * GLOBAL PROPERTIES
- */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500&display=swap");
+* * << GLOBAL PROPERTIES
+* * --> Properties:
 
+Colors:
+
+Text: 1A1A1A
+Green: #00B172
+White: #FFF
+*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -10,131 +16,418 @@
   font-family: "Montserrat", sans-serif;
 }
 
-/* 
-* * << HEADER >>
-* * --> Navbar properties: 
-*/
+/*  
+  * * HEADER 
+  * * --> Navbar properties: 
+  */
 .header-navbar {
-  padding: 2vh 3vw;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
 }
-
-.header-navbar-image {
-  width: 10%;
-  height: 10%;
-}
-
-.header-navbar-image:hover {
+.header-navbar .header-navbar-image:hover {
   cursor: pointer;
   opacity: 0.8;
 }
-
-.header-navbar-list {
-  width: 30%;
-  text-align: right;
-}
-
-.header-navbar-list li {
-  padding: 3%;
-  display: inline-block;
-  font-weight: 500;
-}
-
-.header-navbar-list li:hover {
+.header-navbar .header-navbar-list li:hover {
   color: #00b172;
   cursor: pointer;
 }
 
 /* 
-* * << HEADER >>
+* * HEADER 
 * * --> Banner properties: 
 */
 .header-banner {
-  height: 80vh;
   background-image: url(../images/landing.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-position-y: center;
-
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
 }
-
 .header-banner h1 {
   font-size: 4em;
   padding: 2vh;
 }
-
 .header-banner p {
   font-size: 20px;
   font-weight: 100;
 }
-
 .header-banner h1,
 .header-banner p {
   color: white;
 }
 
 /* 
-* * << SECTION >>
+* * SECTION 
 * * --> Section properties: 
  */
-.section-container {
-  height: 45vh;
-  padding: 2% 3%;
+.first-section {
+  width: 80vw;
+  margin: 0 auto;
   text-align: center;
 }
-
-.section-title {
+.first-section .first-section-title {
   margin: 0 auto 2% auto;
+  width: -moz-fit-content;
   width: fit-content;
   padding-bottom: 0.5%;
   border-bottom: 2px solid #00b172;
 }
-
-.section-container-title {
+.first-section .first-section-title-container {
   font-size: 30px;
 }
-
-.section-content {
-  height: fit-content;
+.first-section .first-section-content {
+  margin-top: 5%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
-
-.section-contents {
+.first-section .first-section-contents {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: fit-content;
-}
-
-.section-content-images {
+  align-self: stretch;
+  transition: transform 0.2s;
+  background-color: white;
   width: 25%;
 }
-
-.section-contents h2 {
+.first-section .first-section-contents p {
+  line-height: 1.5em;
+}
+.first-section .first-section-contents:hover {
+  transform: scale(1.3);
+}
+.first-section .first-section-contents h2 {
   color: #00b172;
   margin: 3% 0;
 }
 
-/*  
-TODO: Need to style the last section
+/* 
+* * SECTION 
+* * --> Section properties: 
+ */
+.second-section {
+  color: white;
+  background-color: #00b172;
+}
+.second-section .second-section-title {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-bottom: 0.5%;
+  border-bottom: 2px solid white;
+}
+.second-section .second-section-content {
+  position: relative;
+  display: flex;
+}
+.second-section .second-section-content .second-section-content-1 {
+  display: flex;
+}
+.second-section .second-section-content .second-section-content-1 h1 {
+  margin: 10% 0;
+}
+.second-section .second-section-content .second-section-content-1 p {
+  line-height: 1.5em;
+}
+.second-section .second-section-content .second-section-content-2 {
+  width: 10%;
+}
+.second-section .second-section-content .second-section-content-2 img {
+  width: 100%;
+}
+.second-section .second-section-content .second-section-content-3 {
+  width: 25%;
+  height: -moz-fit-content;
+  height: fit-content;
+  transition: transform 0.2s;
+}
+.second-section .second-section-content .second-section-content-3 img {
+  width: 100%;
+}
+.second-section .second-section-content .second-section-content-3:hover {
+  transform: scale(1.2);
+}
+
+/* 
+* * ------------------------------------------------------------------------------------------------------------- 
+* * << DESKTOP SIZE >>
+* * --> Query properties: 
+* * ------------------------------------------------------------------------------------------------------------- 
 */
-
-/*
-Colors:
-
-Text: 1A1A1A
-Green: #00B172
-White: #FFF
-
+@media (width >= 720px) {
+  /*  
+  * * HEADER 
+  * * --> Navbar properties: 
+  */
+  .header-navbar {
+    padding: 2vh 3vw;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-navbar .header-navbar-image {
+    width: 10%;
+    height: 10%;
+  }
+  .header-navbar .header-navbar-list {
+    width: 50%;
+    text-align: right;
+  }
+  .header-navbar .header-navbar-list li {
+    padding: 3%;
+    display: inline-block;
+    font-weight: 500;
+  }
+  /* 
+  * * HEADER 
+  * * --> Banner properties: 
+  */
+  .header-banner {
+    margin-top: 12vh;
+    height: 80vh;
+  }
+  /* 
+  * * SECTION 
+  * * --> Section properties: 
+   */
+  .first-section {
+    padding: 2% 0 5% 0;
+  }
+  .first-section .first-section-content {
+    height: -moz-fit-content;
+    height: fit-content;
+    justify-content: space-between;
+  }
+  .first-section .first-section-contents {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .first-section .first-section-content-images {
+    width: 40%;
+  }
+  /* 
+  * * SECTION 
+  * * --> Section properties: 
+   */
+  .second-section {
+    width: 80vw;
+    margin: 0 auto;
+    padding: 5%;
+  }
+  .second-section .second-section-content {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .second-section .second-section-content .second-section-content-1 {
+    align-self: stretch;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .second-section .second-section-content .second-section-content-2 {
+    width: 10%;
+  }
+  .second-section .second-section-content .second-section-content-3 {
+    width: 25%;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+@media (width < 886px) and (width > 460px) {
+  /*  
+  * * HEADER 
+  * * --> Navbar properties: 
+  */
+  .header-navbar {
+    padding: 2vh 3vw;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-navbar .header-navbar-image {
+    width: 10%;
+    height: 10%;
+  }
+  .header-navbar .header-navbar-list {
+    width: 90%;
+    text-align: right;
+  }
+  .header-navbar .header-navbar-list li {
+    padding: 3%;
+    display: inline-block;
+    font-weight: 500;
+  }
+  /* 
+  * * HEADER 
+  * * --> Banner properties: 
+  */
+  .header-banner {
+    margin-top: 12vh;
+    height: 80vh;
+  }
+  /* 
+  * * SECTION 
+  * * --> Section properties: 
+   */
+  .first-section {
+    padding: 2% 0 5% 0;
+  }
+  .first-section .first-section-content {
+    height: -moz-fit-content;
+    height: fit-content;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .first-section .first-section-contents {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .first-section .first-section-content-images {
+    width: 40%;
+  }
+  /* 
+  * * SECTION 
+  * * --> Section properties: 
+   */
+  .second-section {
+    width: 100vw;
+    margin: 0 auto;
+    padding: 5%;
+  }
+  .second-section .second-section-content {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .second-section .second-section-content .second-section-content-1 {
+    align-self: stretch;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .second-section .second-section-content .second-section-content-2 {
+    width: 10%;
+  }
+  .second-section .second-section-content .second-section-content-3 {
+    width: 25%;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+/* 
+* * ------------------------------------------------------------------------------------------------------------- 
+* * << MOBILE SIZE >>
+* * --> Query properties: 
+* * ------------------------------------------------------------------------------------------------------------- 
 */
+@media (max-width: 460px) {
+  /* 
+  * * ------------------------------------------------------------------------------------------------------------- 
+  * * << PHONE SIZE >>
+  * * --> Query properties: 
+  * * ------------------------------------------------------------------------------------------------------------- 
+  */
+  /*  
+  * * HEADER 
+  * * --> Navbar properties: 
+  */
+  .header-navbar {
+    padding: 3% 0 0 0;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-navbar .header-navbar-image {
+    margin-left: 6vw;
+    width: 30%;
+    height: 30%;
+  }
+  .header-navbar .header-navbar-list {
+    text-align: center;
+    width: 100%;
+  }
+  .header-navbar .header-navbar-list li {
+    padding: 3%;
+    display: inline-block;
+    font-weight: 500;
+  }
+  /* 
+  * * HEADER 
+  * * --> Banner properties: 
+  */
+  .header-banner {
+    margin-top: 12vh;
+    height: 90vh;
+  }
+  .header-banner h1 {
+    font-size: 2em;
+    padding: 2vh;
+  }
+  .header-banner p {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 1.5em;
+  }
+  /* 
+  * * SECTION 
+  * * --> Section properties: 
+   */
+  .first-section {
+    padding: 10% 0 5% 0;
+  }
+  .first-section .first-section-content {
+    height: -moz-fit-content;
+    height: fit-content;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .first-section .first-section-contents {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10% 0;
+  }
+  .first-section .first-section-content-images {
+    width: 30%;
+  }
+  /* 
+  * * SECTION 
+  * * --> Section properties: 
+   */
+  .second-section {
+    width: 100%;
+    padding: 10%;
+    margin: 0 auto;
+  }
+  .second-section .second-section-title {
+    margin: 0 auto;
+  }
+  .second-section .second-section-content {
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+  }
+  .second-section .second-section-content .second-section-content-1 {
+    text-align: center;
+    align-self: stretch;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .second-section .second-section-content .second-section-content-1 h1 {
+    margin: 8%;
+  }
+  .second-section .second-section-content .second-section-content-1 h1:nth-child(1) {
+    margin-top: 15%;
+  }
+  .second-section .second-section-content .second-section-content-2 {
+    margin: 20% 0;
+    width: 15%;
+  }
+  .second-section .second-section-content .second-section-content-3 {
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}/*# sourceMappingURL=style.css.map */
