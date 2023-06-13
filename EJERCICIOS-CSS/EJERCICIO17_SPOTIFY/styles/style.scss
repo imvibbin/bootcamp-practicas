@@ -26,8 +26,10 @@ White: #FFF
   display: flex;
   background-color: white;
   position: fixed;
-  top: 0;
+  overflow: hidden;
+
   z-index: 1000;
+  top: 0;
 
   .header-navbar-image:hover {
     cursor: pointer;
@@ -190,7 +192,7 @@ White: #FFF
   * * --> Navbar properties: 
   */
   .header-navbar {
-    padding: 2vh 3vw;
+    padding: 1% 3%;
     justify-content: space-between;
     align-items: center;
 
@@ -216,7 +218,7 @@ White: #FFF
 * * --> Banner properties: 
 */
   .header-banner {
-    margin-top: 12vh;
+    margin-top: 10vh;
     height: 80vh;
   }
 
