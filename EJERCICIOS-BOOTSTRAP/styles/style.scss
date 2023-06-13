@@ -22,35 +22,45 @@
 * << EXERCISE 2 >> */
 
 /* 
-* << EXERCISE 3 >> */
+* << EXERCISES 3 >> */
 .row div {
   border: 10px solid white;
 }
 
-.firstrow {
+.firstrow,
+.first-row {
   background-color: $teal-400;
 }
 
-.secondrow {
+.secondrow,
+.second-row {
   background-color: $blue-300;
 }
 
-.thirdrow {
+.thirdrow,
+.third-row {
   background-color: $red-400;
 }
 
-.fourthrow {
+.fourthrow,
+.fourth-row {
   background-color: $yellow-300;
 }
 
-.fifthrow {
+.fifthrow,
+.fifth-row {
   background-color: $orange-600;
 }
 
-.sixthrow {
+.sixthrow,
+.sixth-row {
   background-color: $indigo-400;
 }
 
-.seventhrow {
+.seventhrow,
+.seventh-row {
   background-color: $purple-300;
 }
+
+/* 
+* << EXERCISE 4 >> */
