@@ -1,0 +1,66 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/maps"; //Comentar cuando no trabajemos con la versión 5.3 de Bootstrap
+@import "../node_modules/bootstrap/scss/mixins";
+
+/* 
+* << EXERCISE 1 >> */
+@include media-breakpoint-between(lg, xxl) {
+  .color-container {
+    background-color: green;
+  }
+}
+
+@include media-breakpoint-between(xs, lg) {
+  .color-container {
+    background-color: violet;
+  }
+}
+
+/* 
+* << EXERCISE 2 >> */
+
+/* 
+* << EXERCISES 3 >> */
+.row div {
+  border: 10px solid white;
+}
+
+.firstrow,
+.first-row {
+  background-color: $teal-400;
+}
+
+.secondrow,
+.second-row {
+  background-color: $blue-300;
+}
+
+.thirdrow,
+.third-row {
+  background-color: $red-400;
+}
+
+.fourthrow,
+.fourth-row {
+  background-color: $yellow-300;
+}
+
+.fifthrow,
+.fifth-row {
+  background-color: $orange-600;
+}
+
+.sixthrow,
+.sixth-row {
+  background-color: $indigo-400;
+}
+
+.seventhrow,
+.seventh-row {
+  background-color: $purple-300;
+}
+
+/* 
+* << EXERCISE 4 >> */
