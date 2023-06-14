@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Ejercicio 6 - Columnas</title>
+</head>
+
+<body>
+    <div class="container-fluid bg-green p-5 text-white">
+        <h1 class="mt-4">Apartado 1</h1>
+        <div class="row apartado1-row">
+            <div class="col border bg-green-clear p-3 text-center align-self-start">.col .align-self-start</div>
+            <div class="col border bg-green-clear p-3 text-center align-self-center">.col .align-self-center</div>
+            <div class="col border bg-green-clear p-3 text-center align-self-end">.col .align-self-end</div>
+        </div>
+
+        <h1 class="mt-4">Apartado 2</h1>
+        <div class="row my-3 justify-content-start">
+            <div class="col-4 border bg-green-clear p-3 text-center">One of two columns</div>
+            <div class="col-4 border bg-green-clear p-3 text-center">One of two columns</div>
+        </div>
+        <div class="row my-3 justify-content-center">
+            <div class="col-4 border bg-green-clear p-3 text-center">One of two columns</div>
+            <div class="col-4 border bg-green-clear p-3 text-center">One of two columns</div>
+        </div>
+        <div class="row my-3 justify-content-end">
+            <div class="col-4 border bg-green-clear p-3 text-center">One of two columns</div>
+            <div class="col-4 border bg-green-clear p-3 text-center">One of two columns</div>
+        </div>
+        <div class="row my-3 justify-content-around">
+            <div class="col-4 border bg-green-clear p-3 text-center">One of two columns</div>
+            <div class="col-4 border bg-green-clear p-3 text-center">One of two columns</div>
+        </div>
+        <div class="row my-3 justify-content-between">
+            <div class="col-4 border bg-green-clear p-3 text-center">One of two columns</div>
+            <div class="col-4 border bg-green-clear p-3 text-center">One of two columns</div>
+        </div>
+        <div class="row my-3 justify-content-evenly">
+            <div class="col-4 border bg-green-clear p-3 text-center">One of two columns</div>
+            <div class="col-4 border bg-green-clear p-3 text-center">One of two columns</div>
+        </div>
+
+        <h1 class="mt-4">Apartado 3</h1>
+        <div class="row">
+            <div class="col border bg-green-clear p-3 text-center order-last">Columna 1</div>
+            <div class="col border bg-green-clear p-3 text-center">Columna 2</div>
+            <div class="col border bg-green-clear p-3 text-center order-first">Columna 3</div>
+        </div>
+
+        <h1 class="mt-4">Apartado 4</h1>
+        <div class="row">
+            <div class="col border bg-green-clear p-3 text-center order-xl-1">.col .order-xl-1</div>
+            <div class="col border bg-green-clear p-3 text-center order-xl-2">.col .order-xl-2</div>
+            <div class="col border bg-green-clear p-3 text-center order-xl-3">.col .order-xl-3</div>
+        </div>
+
+        <h1 class="mt-4">Apartado 5</h1>
+        <div class="row">
+            <div class="col-3 bg-green-clear p-3 text-center">.col-3</div>
+            <div class="col-3 offset-3 border bg-green-clear p-3 text-center">.col-3 .ml-auto</div>
+            <div class="col-3 border bg-green-clear p-3 text-center">.col-3</div>
+        </div>
+        <div class="row">
+            <div class="col-3 offset-3 ml-auto border bg-green-clear p-3 text-center">.col-3 .ml-auto</div>
+            <div class="col-3 offset-3 ml-auto border bg-green-clear p-3 text-center">.col-3 .ml-auto</div>
+        </div>
+    </div>
+
+
+    <!-- * JavaScript code -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
