@@ -87,13 +87,13 @@
 /* 
 * << EXERCISE 7 >> */
 .main-container {
-  height: 100vh;
   color: white;
-  background-color: rgb(71, 93, 63);
+  height: 100%;
 
   .row > div {
-    border: 1px solid white;
-    background-color: rgb(109, 154, 91);
+    div {
+      background-color: rgb(109, 154, 91);
+    }
   }
 }
 

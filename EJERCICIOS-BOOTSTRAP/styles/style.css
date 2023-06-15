@@ -12113,12 +12113,10 @@ textarea.form-control-lg {
 /* 
 * << EXERCISE 7 >> */
 .main-container {
-  height: 100vh;
   color: white;
-  background-color: rgb(71, 93, 63);
+  height: 100%;
 }
-.main-container .row > div {
-  border: 1px solid white;
+.main-container .row > div div {
   background-color: rgb(109, 154, 91);
 }
 
