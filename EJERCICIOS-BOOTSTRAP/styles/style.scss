@@ -4,6 +4,23 @@
 @import "../node_modules/bootstrap/scss/maps"; //Comentar cuando no trabajemos con la versión 5.3 de Bootstrap
 @import "../node_modules/bootstrap/scss/mixins";
 
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+
+/*
+* << GLOBAL PROPERTIES >> */
+
+* {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.bg-green {
+  background-color: rgb(71, 93, 63);
+}
+
+.bg-green-clear {
+  background-color: rgb(109, 154, 91);
+}
+
 /* 
 * << EXERCISE 1 >> */
 @include media-breakpoint-between(lg, xxl) {
@@ -67,19 +84,9 @@
 .row-border-ex4 div {
   border: 1px solid black;
 }
-/* 
-* << EXERCISE 5 >> */
-/* 
 
+/* 
 * << EXERCISE 6 >> */
-.bg-green {
-  background-color: rgb(71, 93, 63);
-}
-
-.bg-green-clear {
-  background-color: rgb(109, 154, 91);
-}
-
 .apartado1-row {
   height: 30vh;
 }
@@ -99,11 +106,10 @@
 
 /* 
 * << EXERCISE 8 >> */
-/* 
-* << EXERCISE 9 >> */
-/* 
-* << EXERCISE 10 >> */
-/* 
-* << EXERCISE 11 >> */
-/* 
-* << EXERCISE 12 >> */
+.aside {
+  height: 100%;
+}
+
+.section [class^="bg"] {
+  height: 20vh;
+}

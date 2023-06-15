@@ -4,6 +4,7 @@
  * Copyright 2011-2023 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
@@ -12032,6 +12033,20 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+/*
+* << GLOBAL PROPERTIES >> */
+* {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.bg-green {
+  background-color: rgb(71, 93, 63);
+}
+
+.bg-green-clear {
+  background-color: rgb(109, 154, 91);
+}
+
 /* 
 * << EXERCISE 1 >> */
 @media (min-width: 992px) and (max-width: 1399.98px) {
@@ -12094,18 +12109,7 @@ textarea.form-control-lg {
 }
 
 /* 
-* << EXERCISE 5 >> */
-/* 
-
 * << EXERCISE 6 >> */
-.bg-green {
-  background-color: rgb(71, 93, 63);
-}
-
-.bg-green-clear {
-  background-color: rgb(109, 154, 91);
-}
-
 .apartado1-row {
   height: 30vh;
 }
@@ -12122,11 +12126,10 @@ textarea.form-control-lg {
 
 /* 
 * << EXERCISE 8 >> */
-/* 
-* << EXERCISE 9 >> */
-/* 
-* << EXERCISE 10 >> */
-/* 
-* << EXERCISE 11 >> */
-/* 
-* << EXERCISE 12 >> *//*# sourceMappingURL=style.css.map */
+.aside {
+  height: 100%;
+}
+
+.section [class^=bg] {
+  height: 20vh;
+}/*# sourceMappingURL=style.css.map */
