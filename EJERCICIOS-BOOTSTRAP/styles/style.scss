@@ -7,12 +7,14 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
 
 /*
-* << GLOBAL PROPERTIES >> */
-
+* << VARIABLES >> */
 $c-green-darkest: rgb(45, 59, 40);
 $c-green-normal: rgb(71, 93, 63);
 $c-green-clear: rgb(109, 154, 91);
 $c-green-clearest: rgb(163, 231, 136);
+
+/*
+* << GLOBAL PROPERTIES >> */
 
 * {
   font-family: "JetBrains Mono", monospace;
@@ -90,12 +92,6 @@ $c-green-clearest: rgb(163, 231, 136);
 }
 
 /* 
-* << EXERCISE 4 >> */
-.row-border-ex4 div {
-  border: 1px solid $c-green-darkest;
-}
-
-/* 
 * << EXERCISE 6 >> */
 .apartado1-row {
   height: 30vh;
@@ -122,4 +118,17 @@ $c-green-clearest: rgb(163, 231, 136);
 
 .section [class^="bg"] {
   height: 20vh;
+}
+
+/* 
+* << EXERCISE 8 >> */
+table {
+  caption-side: top;
+}
+
+.first-table thead td,
+.first-table thead th,
+.first-table tr td {
+  color: white;
+  border: none;
 }
