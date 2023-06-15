@@ -12047,6 +12047,14 @@ textarea.form-control-lg {
   background-color: rgb(109, 154, 91);
 }
 
+.bg-green-clearest {
+  background-color: rgb(163, 231, 136);
+}
+
+.border-green-clearest {
+  border: 1px solid rgb(163, 231, 136);
+}
+
 /* 
 * << EXERCISE 1 >> */
 @media (min-width: 992px) and (max-width: 1399.98px) {
@@ -12105,7 +12113,7 @@ textarea.form-control-lg {
 /* 
 * << EXERCISE 4 >> */
 .row-border-ex4 div {
-  border: 1px solid black;
+  border: 1px solid rgb(45, 59, 40);
 }
 
 /* 

@@ -9,6 +9,11 @@
 /*
 * << GLOBAL PROPERTIES >> */
 
+$c-green-darkest: rgb(45, 59, 40);
+$c-green-normal: rgb(71, 93, 63);
+$c-green-clear: rgb(109, 154, 91);
+$c-green-clearest: rgb(163, 231, 136);
+
 * {
   font-family: "JetBrains Mono", monospace;
 }
@@ -19,6 +24,14 @@
 
 .bg-green-clear {
   background-color: rgb(109, 154, 91);
+}
+
+.bg-green-clearest {
+  background-color: rgb(163, 231, 136);
+}
+
+.border-green-clearest {
+  border: 1px solid $c-green-clearest;
 }
 
 /* 
@@ -82,7 +95,7 @@
 /* 
 * << EXERCISE 4 >> */
 .row-border-ex4 div {
-  border: 1px solid black;
+  border: 1px solid $c-green-darkest;
 }
 
 /* 
