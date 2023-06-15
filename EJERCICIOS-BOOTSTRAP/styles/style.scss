@@ -9,6 +9,7 @@
 /*
 * << VARIABLES >> */
 $c-green-darkest: rgb(45, 59, 40);
+$c-green-darkest-transparent: rgba(45, 59, 40, 0.4);
 $c-green-normal: rgb(71, 93, 63);
 $c-green-clear: rgb(109, 154, 91);
 $c-green-clearest: rgb(163, 231, 136);
@@ -34,6 +35,10 @@ $c-green-clearest: rgb(163, 231, 136);
 
 .border-green-clearest {
   border: 1px solid $c-green-clearest;
+}
+
+.border-green-darkest-transparent {
+  border: 1px solid $c-green-darkest-transparent;
 }
 
 /* 
@@ -130,4 +135,11 @@ table {
 .first-table thead th,
 .first-table tr td {
   color: white;
+}
+
+/*  
+* << EXERCISE 10 >> */
+
+.content-card {
+  height: 40vh;
 }

@@ -12057,6 +12057,10 @@ textarea.form-control-lg {
   border: 1px solid rgb(163, 231, 136);
 }
 
+.border-green-darkest-transparent {
+  border: 1px solid rgba(45, 59, 40, 0.4);
+}
+
 /* 
 * << EXERCISE 1 >> */
 @media (min-width: 992px) and (max-width: 1399.98px) {
@@ -12146,4 +12150,10 @@ table {
 .first-table thead th,
 .first-table tr td {
   color: white;
+}
+
+/*  
+* << EXERCISE 10 >> */
+.content-card {
+  height: 40vh;
 }/*# sourceMappingURL=style.css.map */
