@@ -38,8 +38,20 @@ $purple-light: hsl(263, 100%, 79%);
 // * --> Border colors
 
 // * >> GENERAL PROPERTIES
-.padding {
-  padding: 5% 15% 5% 15%;
+.border-test-blue {
+  border: 2px solid blue;
+}
+
+.border-test-red {
+  border: 2px solid red;
+}
+
+.border-test-red-dark {
+  border: 2px solid rgb(115, 40, 40);
+}
+
+.border-test {
+  border: 2px solid black;
 }
 
 .column-cards {
