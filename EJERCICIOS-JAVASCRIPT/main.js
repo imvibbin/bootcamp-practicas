@@ -211,32 +211,39 @@ console.log(`Después de haber hecho el primer if`);
 console.log(`\n`);
 
 const arr1 = ["🍔", "🌯", "🍣", "🍕", "🍜", "🍱", "🍙", "🍘", "🥩"];
+const arr2 = ["🍕", "🍕", "🍍", "🍕", "🍕"];
+const arr3 = ["🍓", "🍋", "🍓", "🍋", "🍓"];
+const arr4 = ["🌶", "🥛", "🌶", "🥛", "🌶", "🥛"];
+const arr5 = ["🎴", "🎴", "🎴", "🃏", "🎴", "🎴", "🎴"];
+
+// NOTE: ARRAY 1
 arr1.fill("🍺", arr1.indexOf("🍕"), arr1.length);
 console.log(`Array 1: ${arr1}`);
 
-const arr2 = ["🍕", "🍕", "🍍", "🍕", "🍕"];
+// NOTE: ARRAY 2
 console.log(
   arr2.includes("🍍") ? `Array 2: Yes, it does` : `Array 2 : No, it doesn't`
 );
 arr2.splice(arr2.indexOf("🍍"), 1);
 console.log(`Array 2 (without pineapple): ${arr2}`);
 
-const arr3 = ["🍓", "🍋", "🍓", "🍋", "🍓"];
+// NOTE: ARRAY 3
 arr3.forEach((element) => {
   if (element === "🍓") arr3.splice(arr3.indexOf(element), 1, "🍄");
 });
-console.log(arr3);
+console.log(`Array 3: ${arr3}`);
 
-// TODO: ejercicios
-const arr4 = ["🌶", "🥛", "🌶", "🥛", "🌶", "🥛"];
-let pointer = 0;
-// arr4.forEach((element) => {
-//   if (element == "🌶") {
-//     let destination = pointer + 1;
-//     arr4.splice(destination, 0, "🥵");
-//     console.log(destination);
-//   }
-//   pointer++;
-// });
-console.log(arr4.indexOf(🌶"))
-const arr5 = ["🎴", "🎴", "🎴", "🃏", "🎴", "🎴", "🎴"];
+// NOTE: ARRAY 4
+for (let pos = 0; pos < arr4.length; pos++) {
+  if (arr4[pos] === "🌶") arr4.splice(pos + 1, 0, "🥵");
+}
+console.log(`Array 4: ${arr4}`);
+
+// NOTE: ARRAY 5
+for (let pos = 0; pos < arr5.length; pos++) {
+  if (arr5[pos] === "🎴" && arr5[pos + 1] === "🎴") {
+    arr5.splice(pos + 1, 0, "🃏")
+    pos++;
+  }
+}
+console.log(`Array 5: ${arr5}`);
