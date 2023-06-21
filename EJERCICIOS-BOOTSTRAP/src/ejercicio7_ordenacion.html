@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>Ejercicio 7 - Ordenación y offset</title>
+</head>
+
+<body class="vh-100 bg-green">
+    <div class="container-fluid text-center main-container">
+        <div class="row header-container">
+            <div class="col-12">
+                <div class="p-3">HEADER</div>
+            </div>
+        </div>
+
+        <div class="row mt-4 g-3">
+            <div class="col-6 col-sm-3 offset-md-3 offset-lg-3 offset-xl-3">
+                <div class="p-5">1</div>
+            </div>
+            <div class="col-6 col-sm-3">
+                <div class="p-5">2</div>
+            </div>
+            <div class="col-6 col-sm-3 d-none d-md-block"></div>
+            <div class="col-6 col-sm-3">
+                <div class="p-5">3</div>
+            </div>
+            <div class="col-6 col-sm-3 offset-md-6 offset-lg-6 offset-xl-6">
+                <div class="p-5">4</div>
+            </div>
+        </div>
+
+        <div class="row mt-4 d-none d-sm-block d-md-none" mt-4>
+            <div class="col-12">
+                <div class="p-4">TABLET</div>
+            </div>
+        </div>
+
+        <div class="row mt-4 g-3 order-2">
+            <div class="col-6 col-sm-3 order-xl-4 order-lg-4 order-md-4">
+                <div class="p-5 ">A</div>
+            </div>
+            <div class="col-6 col-sm-3 order-xl-3 order-lg-3 order-md-3">
+                <div class="p-5 ">B</div>
+            </div>
+            <div class="col-6 col-sm-3 order-xl-2 order-lg-2 order-md-2">
+                <div class="p-5 ">C</div>
+            </div>
+            <div class="col-6 col-sm-3 order-xl-1 order-lg-1 order-md-1">
+                <div class="p-5 ">D</div>
+            </div>
+        </div>
+
+        <div class="row mt-4 d-sm-none d-md-block" mt-4>
+            <div class="col-12">
+                <div class="p-4 d-none d-md-block">DESKTOP</div>
+                <div class="p-4 d-block d-sm-none">MOBILE</div>
+            </div>
+        </div>
+
+        <div class="row mt-4 g-3 justify-content-center">
+            <div class="col-md-3 col-6 d-none d-sm-block">
+                <div class="p-5">:(</div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 ">
+                <div class=" p-5">:D</div>
+            </div>
+        </div>
+
+        <div class="row mt-4 d-none d-sm-block">
+            <div class="col-12">
+                <div class="p-2">FOOTER</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- * JavaScript code -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

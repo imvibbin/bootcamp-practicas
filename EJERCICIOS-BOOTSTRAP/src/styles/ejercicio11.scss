@@ -1,0 +1,187 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/maps"; //Comentar cuando no trabajemos con la versión 5.3 de Bootstrap
+@import "../../node_modules/bootstrap/scss/mixins";
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+// * >> VARIABLES
+$purple: hsl(263, 55%, 52%);
+$purple-light: hsl(263, 100%, 79%);
+
+// * >> GLOBAL PROPERTIES
+* {
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+// * --> Background colors
+.bg-blue-light {
+  background-color: hsl(210, 46%, 95%);
+}
+
+.bg-purple {
+  background-color: $purple;
+}
+
+.bg-dark-grayish {
+  background-color: hsl(217, 19%, 35%);
+}
+
+.bg-dark-blackish {
+  background-color: hsl(219, 29%, 14%);
+}
+
+.bg-white {
+  background-color: hsl(0, 0%, 100%);
+}
+
+// * --> Border colors
+
+// * >> GENERAL PROPERTIES
+.border-test-blue {
+  border: 2px solid blue;
+}
+
+.border-test-red {
+  border: 2px solid red;
+}
+
+.border-test-red-dark {
+  border: 2px solid rgb(115, 40, 40);
+}
+
+.border-test {
+  border: 2px solid black;
+}
+
+.column-cards {
+  padding: 30px;
+  border-radius: 10px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+
+  .img-quotation {
+    top: 0;
+    width: 22%;
+    right: 100px;
+    position: absolute;
+    z-index: 1;
+  }
+
+  [class*="column-card-info"],
+  [class*="column2-card-info"] {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+
+    div {
+      height: 20vh;
+      width: 50px;
+      height: 50px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 100px;
+    }
+
+    .column-card-info-picture-1 {
+      border: 2px solid $purple-light;
+      background-image: url("../assets/images/image-daniel.jpg");
+    }
+
+    .column-card-info-picture-2 {
+      background-image: url("../assets/images/image-jonathan.jpg");
+    }
+
+    .column-card-info-picture-3 {
+      background-image: url("../assets/images/image-jeanette.jpg");
+    }
+
+    .column-card-info-picture-4 {
+      border: 2px solid $purple-light;
+      background-image: url("../assets/images/image-patrick.jpg");
+    }
+
+    .column2-card-info-picture {
+      background-image: url("../assets/images/image-kira.jpg");
+    }
+
+    ul {
+      padding: 0;
+      list-style-type: none;
+
+      li:nth-child(1) {
+        font-weight: bold;
+      }
+
+      .list-clear {
+        color: hsl(0, 0%, 81%);
+      }
+
+      .list-clearest {
+        color: hsl(0, 0%, 57%);
+      }
+    }
+  }
+
+  .column-header {
+    font-size: 23px;
+    font-weight: bold;
+    position: relative;
+    z-index: 100;
+  }
+
+  .column-contents p {
+    margin: 0;
+    color: hsl(0, 0%, 81%);
+    position: relative;
+    z-index: 100;
+  }
+
+  .column-contents-white p {
+    color: hsl(0, 0%, 57%);
+    position: relative;
+    z-index: 100;
+  }
+}
+// # Front-end Style Guide
+
+// ## Layout
+
+// The designs were created to the following widths:
+
+// - Mobile: 375px
+// - Desktop: 1440px
+
+// ## Colors
+
+// ### Primary
+
+// Moderate violet: hsl(263, 55%, 52%)
+// Very dark grayish blue: hsl(217, 19%, 35%)
+// Very dark blackish blue: hsl(219, 29%, 14%)
+// White: hsl(0, 0%, 100%)
+
+// ### Neutral
+
+// Light gray: hsl(0, 0%, 81%)
+// Light grayish blue: hsl(210, 46%, 95%)
+
+// Note for text colors:
+
+// 1. "Verified Graduate" has the same color as the person's name with 50% opacity
+// 2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity
+
+// ## Typography
+
+// ### Body Copy
+
+// - Font size: 13px
+
+// ### Font
+
+// - Family: [Barlow Semi Condensed](https://fonts.google.com/specimen/Barlow+Semi+Condensed)
+// - Weights: 500, 600
