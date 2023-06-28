@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link href="../../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="module" src="../scripts/main.js"></script>
+    <title>Pokemon</title>
+</head>
+
+<body>
+    <div class="min-h-screen flex items-center dark:bg-slate-700">
+        <div class="flex-1 max-w-6xl mx-auto p-10">
+            <h1>Pokedex</h1>
+            <div class="search-container mx-auto border-4 border-rose-500 flex justify-between w-1/4">
+                <div class="search-bar flex">
+                    <div class="flex justify-center items-center p-5 rounded-l-full"><i class="fa fa-search"></i></div>
+                    <input type="text" placeholder="Search..." class="rounded-r-full">
+                </div>
+                <button>Search</button>
+            </div>
+            <div id="pokemon-searcher" class="my-5 grid grid-cols-6 gap-1 w-fit mx-auto"></div>
+            <div id="pokemon-container" class="my-5 grid grid-cols-4 gap-6 mx-auto"></div>
+        </div>
+    </div>
+</body>
+
+</html>
