@@ -118,9 +118,10 @@
 
 .search-container {
   height: 50px;
+  width: 60%;
 
   .search-bar {
-    width: 60%;
+    width: 80%;
 
     div {
       text-align: center;
@@ -139,23 +140,30 @@
       outline: none;
     }
   }
-}
 
-.card {
-  transition: all 0.2s ease;
-
-  .pokemon-img {
-    width: 200px;
-  }
-
-  .pokemon-type {
-    width: 100%;
-    text-align: center;
+  button {
+    background-color: #2769b3;
+    width: 110px;
   }
 }
 
-.card:hover {
-  background-color: rgb(210, 210, 210);
+#pokemon-searcher {
+  width: 60%;
+}
+
+.card:hover,
+button:hover {
+  outline: 2px solid white;
+  outline-offset: -2px;
   transform: translate3D(0, -1px, 0) scale(1.1);
   cursor: pointer;
+}
+
+#page-indicator {
+  height: 50px;
+
+  .page-btn {
+    width: 100px;
+    background-color: #2769b3;
+  }
 }

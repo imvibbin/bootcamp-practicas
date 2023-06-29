@@ -524,148 +524,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.mx-auto{
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.my-5{
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
-.flex{
-  display: flex;
-}
-
-.grid{
-  display: grid;
-}
-
-.min-h-screen{
-  min-height: 100vh;
-}
-
-.w-fit{
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.w-full{
-  width: 100%;
-}
-
-.w-1\/4{
-  width: 25%;
-}
-
-.max-w-6xl{
-  max-width: 72rem;
-}
-
-.flex-1{
-  flex: 1 1 0%;
-}
-
-.grid-cols-4{
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.grid-cols-6{
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-}
-
-.items-center{
-  align-items: center;
-}
-
-.justify-center{
-  justify-content: center;
-}
-
-.justify-between{
-  justify-content: space-between;
-}
-
-.gap-1{
-  gap: 0.25rem;
-}
-
-.gap-6{
-  gap: 1.5rem;
-}
-
-.rounded-lg{
-  border-radius: 0.5rem;
-}
-
-.rounded-l-full{
-  border-top-left-radius: 9999px;
-  border-bottom-left-radius: 9999px;
-}
-
-.rounded-r-full{
-  border-top-right-radius: 9999px;
-  border-bottom-right-radius: 9999px;
-}
-
-.border-4{
-  border-width: 4px;
-}
-
-.border-rose-500{
-  --tw-border-opacity: 1;
-  border-color: rgb(244 63 94 / var(--tw-border-opacity));
-}
-
-.bg-white{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.p-10{
-  padding: 2.5rem;
-}
-
-.p-5{
-  padding: 1.25rem;
-}
-
-.px-6{
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.py-8{
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.text-center{
-  text-align: center;
-}
-
-.text-white{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.shadow{
-  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-xl{
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.ring-slate-900\/5{
-  --tw-ring-color: rgb(15 23 42 / 0.05);
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -796,10 +654,11 @@ video {
 
 .search-container {
   height: 50px;
+  width: 60%;
 }
 
 .search-container .search-bar {
-  width: 60%;
+  width: 80%;
 }
 
 .search-container .search-bar div {
@@ -819,8 +678,13 @@ video {
   outline: none;
 }
 
-.card {
-  transition: all 0.2s ease;
+.search-container button {
+  background-color: #2769b3;
+  width: 110px;
+}
+
+#pokemon-searcher {
+  width: 60%;
 }
 
 .card .pokemon-img {
@@ -832,21 +696,21 @@ video {
   text-align: center;
 }
 
-.card:hover {
-  background-color: rgb(210, 210, 210);
+.card:hover,
+button:hover {
+  outline: 2px solid white;
+  outline-offset: -2px;
+  transition: all 0.3s ease-in-out;
   transform: translate3D(0, -1px, 0) scale(1.1);
   cursor: pointer;
 }
 
-@media (prefers-color-scheme: dark){
-  .dark\:bg-slate-700{
-    --tw-bg-opacity: 1;
-    background-color: rgb(51 65 85 / var(--tw-bg-opacity));
-  }
+#page-indicator {
+  height: 50px;
+}
 
-  .dark\:bg-slate-800{
-    --tw-bg-opacity: 1;
-    background-color: rgb(30 41 59 / var(--tw-bg-opacity));
-  }
+#page-indicator #next-btn {
+  width: 100px;
+  background-color: #2769b3;
 }
 /*# sourceMappingURL=output.css.map */
