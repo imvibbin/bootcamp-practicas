@@ -3,22 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="styesheet" href="../styles/style.css" />
-    <link href="../styles/output.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script type="module" src="../scripts/main.js"></script>
-    <script type="module" src="../scripts/events.js"></script>
     <title>Pokemon</title>
+    <style lang="sass">
+      @import './src/styles/style.scss';
+    </style>
   </head>
 
   <body>
-    <div class="min-h-screen flex items-center dark:bg-slate-700">
+    <div class="min-h-screen flex items-center bg-slate-700">
       <div class="flex-1 max-w-6xl mx-auto p-10">
         <img
-          src="../assets/pokedex.png"
+          src="./src/assets/pokedex.png"
           alt="Not image found"
           class="mx-auto my-5"
         />
@@ -55,5 +54,9 @@
         </div>
       </div>
     </div>
+
+    <!-- TypeScript elements -->
+    <script type="module" src="./src/main.ts"></script>
+    <script type="module" src="./src/scripts/events.ts"></script>
   </body>
 </html>

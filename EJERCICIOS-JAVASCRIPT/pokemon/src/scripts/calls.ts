@@ -1,23 +1,37 @@
-const pokemonsJSON = JSON.parse(localStorage.getItem("pokemons"));
-var pokemonApiParams = `?limit=200`;
+interface Pokemon {
+  name: string;
+  info: any;
+}
+
+interface CustomJsonPokemons {
+  pokemons: Pokemon[];
+}
+
+const pokemonApiParams = `?limit=200`;
+const pokemonsJSON = localStorage.getItem("pokemons")
+  ? JSON.parse(localStorage.getItem("pokemons") as string)
+  : null;
+const pokemonsTypesJSON = localStorage.getItem("pokemon_types")
+  ? JSON.parse(localStorage.getItem("pokemon_types") as string)
+  : null;
 
 // !! API calls
 // * GET: all pokemons
-async function getAllPokemons(api_type) {
+async function getAllPokemons(api_type: string) {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${api_type}`);
   const pokemonsJson = await response.json();
   localStorage.setItem("pokemons", JSON.stringify(pokemonsJson));
 }
 
 // * function required for getAllPokemons()
-async function getInfoPokemon(api) {
+async function getInfoPokemon(api: string) {
   const response = await fetch(api);
   const pokemonInfo = await response.json();
   return pokemonInfo;
 }
 
 // * GET: pokemon by id
-async function getPokemonById(id) {
+async function getPokemonById(id: number) {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
   const pokemonById = await response.json();
   localStorage.setItem("pokemon", JSON.stringify(pokemonById));
@@ -30,23 +44,26 @@ async function getPokemonTypes() {
   localStorage.setItem("pokemon_types", JSON.stringify(pokemonTypes));
 }
 
-async function displayPokemonTypeSearcher() {
+async function displayPokemonType() {
   await getPokemonTypes();
-  const pokemonTypes = JSON.parse(localStorage.getItem("pokemon_types"));
-  const pokemonSearcherDOM = document.getElementById("pokemon-searcher");
-  for (const type of pokemonTypes.results) {
+  const pokemonSearcher = document.getElementById(
+    "pokemon-searcher"
+  ) as HTMLElement;
+  for (const type of pokemonsTypesJSON.results) {
     if (type.name != `shadow` && type.name != `unknown`)
-      pokemonSearcherDOM.innerHTML += `<div class="mx-auto w-full pokemon-type-tags pokemon-type-${
+      pokemonSearcher.innerHTML += `<div class="mx-auto w-100 pokemon-type-tags pokemon-type-${
         type.name
       }">${type.name.charAt(0).toUpperCase() + type.name.slice(1)}</div>`;
   }
-  return pokemonTypes;
+  return pokemonsTypesJSON;
 }
 
-async function displayPokemons(numPages, type) {
+async function displayPokemons(numPages: number, type: string) {
   // api call that stores stringified json on cache
-  if (numPages > 0) await getAllPokemons(pokemonApiParams);
-  const pokemonContainer = document.getElementById("pokemon-container");
+  if (numPages === 0) await getAllPokemons(pokemonApiParams);
+  const pokemonContainer = document.getElementById(
+    "pokemon-container"
+  ) as HTMLElement;
   const customJsonPokemons = await createCustomPokemonsJson(
     pokemonsJSON,
     numPages,
@@ -56,18 +73,24 @@ async function displayPokemons(numPages, type) {
   let eraseDOMContent = false;
   for (const pokemon of customJsonPokemons.pokemons) {
     if (numPages > 0 && !eraseDOMContent) {
-      pokemonContainer.innerHTML = await cardPokemon(pokemon);
+      pokemonContainer.innerHTML = await createCardPokemon(pokemon);
       eraseDOMContent = true;
     } else {
-      pokemonContainer.innerHTML += await cardPokemon(pokemon);
+      pokemonContainer.innerHTML += await createCardPokemon(pokemon);
     }
   }
   return customJsonPokemons;
 }
 
-async function createCustomPokemonsJson(json, numPage, type) {
-  const customJsonPokemons = { pokemons: [] };
-  const pokemonPromises = json.results.map((pokemon) =>
+async function createCustomPokemonsJson(
+  json: any,
+  numPage: number,
+  type: string
+) {
+  const customPokemons: CustomJsonPokemons = {
+    pokemons: [],
+  };
+  const pokemonPromises = json.results.map((pokemon: any) =>
     getInfoPokemon(pokemon.url)
   );
   const pokemonResults = await Promise.all(pokemonPromises);
@@ -77,31 +100,29 @@ async function createCustomPokemonsJson(json, numPage, type) {
 
   for (pokemonsToShow; pokemonsToShow < pokemonsToSelect; pokemonsToShow++) {
     if (type == "all") {
-      customJsonPokemons["pokemons"].push({
+      customPokemons["pokemons"].push({
         name: json.results[pokemonsToShow].name,
         info: pokemonResults[pokemonsToShow],
       });
     }
   }
-  console.log(customJsonPokemons);
-  return customJsonPokemons;
+
+  return customPokemons;
 }
 
-async function pokeTypesDOM(json) {
-  let pokemonType = [];
-  json.info.types.map((element) => {
+async function pokeTypesDOM(json: any) {
+  let pokemonType: string[] = [];
+  json.info.types.map((element: any) => {
     pokemonType.push(element.type.name);
   });
   return pokemonType;
 }
 
-async function getPokemonsByType(type) {}
-
-async function cardPokemon(json) {
+async function createCardPokemon(json: any) {
   const pokemonTypes = await pokeTypesDOM(json);
   let DOM_content = `<div class="card pokemon-id-${
     json.info.id
-  } bg-white dark:bg-slate-800 text-center rounded-lg px-6 py-8 ring-5 ring-slate-900/5 shadow-xl text-white">
+  } bg-slate-800 text-center px-6 py-8 ring-5 ring-slate-900/5 shadow-xl text-white">
     <img src="${
       json.info.sprites.other["official-artwork"].front_default
     }" class="pokemon-img"></img>
@@ -121,8 +142,8 @@ async function cardPokemon(json) {
 }
 
 async function display() {
-  await displayPokemonTypeSearcher();
-  await displayPokemons(0);
+  await displayPokemonType();
+  await displayPokemons(0, "all");
 }
 
 export {
