@@ -1,3 +1,4 @@
-import * as Calls from "./scripts/calls.ts";
+import PokemonDisplay from "./scripts/display.ts";
 
-Calls.display();
+const pokemonDisplay = new PokemonDisplay();
+pokemonDisplay.display();

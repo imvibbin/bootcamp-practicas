@@ -16,6 +16,7 @@
     "onchange": "^7.1.0",
     "postcss": "^8.4.24",
     "postcss-cli": "^9.1.0",
+    "postcss-nesting": "^11.3.0",
     "sass": "^1.49.8",
     "tailwindcss": "^3.3.2",
     "typescript": "^5.0.2",
