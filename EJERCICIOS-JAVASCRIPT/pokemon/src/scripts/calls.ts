@@ -1,11 +1,8 @@
 class PokemonApi {
-  private POKEMON_API_PARAMS = `?limit=600`;
-  public DB_NAME = "pokemonDatabase";
-  public DB_VERSION = 1;
-  public POKEMON_STORE_NAME = "pokemons";
+  private POKEMON_API_PARAMS = `?limit=600`; // params for pokeapi
 
-  // !! API calls
-  // * GET: all pokemons
+  // SECTION: << API CALLS >>
+  // PERF: GET: all pokemons
   async getAllPokemons() {
     const response = await fetch(
       `https://pokeapi.co/api/v2/pokemon/${this.POKEMON_API_PARAMS}`
@@ -14,21 +11,21 @@ class PokemonApi {
     localStorage.setItem("pokemons", JSON.stringify(pokemonsJson));
   }
 
-  // *  required for getAllPokemons()
+  // PERF: GET: all the pokemon info
   async getPokemonInfo(pokeApiUrl: string) {
     const response = await fetch(pokeApiUrl);
     const pokemonInfo = await response.json();
     return pokemonInfo;
   }
 
-  // * GET: pokemon by id
+  // PERF: GET: pokemon by id
   async getPokemonById(id: number) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     const pokemonById = await response.json();
     localStorage.setItem("pokemon", JSON.stringify(pokemonById));
   }
 
-  // * GET: all pokemon types
+  // PERF: GET: all pokemon types
   async getPokemonTypes() {
     const response = await fetch(`https://pokeapi.co/api/v2/type`);
     const pokemonTypes = await response.json();

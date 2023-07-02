@@ -1,4 +1,6 @@
 class Dom {
+  // SECTION: >> METHODS
+  // NOTE: displaying a type tag on DOM
   async createTagTypeSearcher(
     pokemonTypesJSON: any,
     mainPokeType: HTMLElement,
@@ -15,6 +17,7 @@ class Dom {
     mainPokeType.innerHTML += `<div id="pokemon-type-all" class="mt-5 mx-auto w-full pokemon-type-tags pokemon-type-all">All</div>`;
   }
 
+  // NOTE: displaying a pokemon for each pokemon on DOM
   async createCardPokemon(pokemonsJson: any) {
     const pokemonTypes = await this.pokeTypesDOM(pokemonsJson);
     let DOM_content = `<div class="card pokemon-id-${
@@ -28,18 +31,19 @@ class Dom {
     }</h2>`;
 
     let DOM_types = `<div class="pokemon-type">`;
-    pokemonTypes.map((type: string) => {
+    for (let type of pokemonTypes) {
       DOM_types += `
       <div id="pokemon-type-${type}" class="pokemon-type-tags pokemon-type-${type}">${
         type.charAt(0).toUpperCase() + type.slice(1)
       }</div>
     `;
-    });
+    }
     DOM_types += `</div></div>`;
 
     return DOM_content + DOM_types;
   }
 
+  // NOTE: getting all the type name of each pokemon
   async pokeTypesDOM(pokemonInfo: any) {
     const pokemonType = pokemonInfo.types.map(
       (element: any) => element.type.name

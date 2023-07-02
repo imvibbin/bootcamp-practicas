@@ -26,9 +26,15 @@
             <div class="flex justify-center items-center p-5 rounded-l-full">
               <i class="fa fa-search"></i>
             </div>
-            <input type="text" placeholder="Search..." class="rounded-r-full" />
+            <input
+              id="input-search-bar"
+              type="text"
+              placeholder="Ex: Agumon"
+              class="rounded-r-full"
+            />
           </div>
           <button
+            id="button-search"
             class="p-5 flex items-center justify-center rounded-full dark:bg-slate-900 text-white"
           >
             Search
@@ -59,6 +65,5 @@
 
     <!-- TypeScript elements -->
     <script type="module" src="./src/main.ts"></script>
-    <script type="module" src="./src/scripts/events.ts"></script>
   </body>
 </html>
