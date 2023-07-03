@@ -2,10 +2,17 @@
 import PokemonDisplay from "./scripts/display.ts";
 import Events from "./scripts/events.ts";
 
-// SECTION: >> Clases
-const pokemonDisplay = new PokemonDisplay();
-const events = new Events();
+class Main {
+  // SECTION: >> Instances
+  private events = new Events();
+  private pokemonDisplay = new PokemonDisplay();
 
-// SECTION: >> Functions
-// NOTE: displaying all pokemon cards
-pokemonDisplay.displayOnLoad();
+  constructor() {
+    // NOTE: displaying all pokemon cards
+    this.events;
+    this.pokemonDisplay.displayOnLoad();
+  }
+}
+
+// SECTION: >> Usage
+new Main();

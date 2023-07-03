@@ -26,9 +26,9 @@ class Events {
 
   constructor() {
     // SECTION: >> EventListener
-    // NOTE: when click on tag type execute clickOnTypeTag()
+    // NOTE: when click on tag type execute handleTypeTagClick()
     document.body.addEventListener("click", (event) =>
-      this.clickOnTypeTag(event)
+      this.handleTypeTagClick(event)
     );
 
     // NOTE: show next 20 pokemons
@@ -44,57 +44,61 @@ class Events {
     });
 
     // NOTE: search pokemon by name
-    // FIX: fix pagination
     this.buttonSearch.addEventListener("click", async () => {
       this.searchPokemonName = this.inputSearch.value;
-      await this.updatePokemonDOM(1, this.firstPageLoad, "name");
+      this.pageNumber = 1;
+      await this.updatePokemonDOM(this.pageNumber, this.firstPageLoad, "name");
     });
   }
 
   // SECTION: >> Methods
   // NOTE: search pokemon by clicked type tag
-  async clickOnTypeTag(event: MouseEvent) {
+  async handleTypeTagClick(event: MouseEvent) {
     this.clickedId = (event.target as Element).id.split("-");
     if (this.clickedId.includes("pokemon") && this.clickedId.includes("type")) {
       this.pageNumber = 1;
       this.clickedType = this.clickedId[this.clickedId.length - 1];
-      await this.updatePokemonDOM(1, this.firstPageLoad, "type");
+      await this.updatePokemonDOM(this.pageNumber, this.firstPageLoad, "name");
     }
   }
 
   // NOTE: check if there are more pokemons to show, it's a page number controller
-  async checkPageNumber(pageNum: number, maxReached: boolean) {
-    if (pageNum > 1) this.backPageBtn.classList.remove("hidden");
+  async checkPageButtons(pageNumber: number, maxReached: boolean) {
+    if (pageNumber > 1) this.backPageBtn.classList.remove("hidden");
     else this.backPageBtn.classList.add("hidden");
     if (maxReached) this.nextPageBtn.classList.add("hidden");
     else this.nextPageBtn.classList.remove("hidden");
   }
 
   // NOTE: updates de pokemon cards depending of the type of filter (NAME or TYPE)
+  // TODO: when there's no match by name show it on DOM
   async updatePokemonDOM(
     pageNumber: number,
     firstPageLoad: boolean,
     filterType: string
   ) {
+    let pokemonList;
     if (filterType === "name") {
-      const pokemonsJson = await this.pokemonDisplay.filterPokemonByName(
+      pokemonList = await this.pokemonDisplay.filterPokemonByName(
         firstPageLoad,
         pageNumber,
-        this.searchPokemonName
+        this.searchPokemonName,
+        this.clickedType == "" ? "all" : this.clickedType
       );
-      console.log(pokemonsJson);
-      this.pageIndicator.innerHTML = this.pageNumber.toString();
-      await this.checkPageNumber(this.pageNumber, true);
-    }
-    if (filterType === "type") {
-      const pokemonsJson = await this.pokemonDisplay.filterPokemonByType(
+    } else if (filterType === "type") {
+      pokemonList = await this.pokemonDisplay.filterPokemonByType(
         firstPageLoad,
         pageNumber,
         this.clickedType == "" ? "all" : this.clickedType
       );
-      this.pageIndicator.innerHTML = this.pageNumber.toString();
-      await this.checkPageNumber(this.pageNumber, pokemonsJson.max_reached);
     }
+    await this.updateDOM(pokemonList, pageNumber);
+  }
+
+  async updateDOM(pokemonList: any, pageNumber: number) {
+    await this.pokemonDisplay.displayPokemons(pokemonList);
+    this.pageIndicator.innerHTML = pageNumber.toString();
+    await this.checkPageButtons(pageNumber, pokemonList.max_reached);
   }
 }
 

@@ -1,5 +1,5 @@
 class PokemonApi {
-  private POKEMON_API_PARAMS = `?limit=600`; // params for pokeapi
+  private POKEMON_API_PARAMS = `?limit=150`; // params for pokeapi
 
   // SECTION: << API CALLS >>
   // PERF: GET: all pokemons
