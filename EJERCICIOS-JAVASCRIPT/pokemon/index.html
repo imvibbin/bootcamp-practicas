@@ -17,7 +17,7 @@
     <div class="min-h-screen flex items-center bg-slate-700">
       <div class="flex-1 max-w-6xl mx-auto p-10">
         <img
-          src="./src/assets/pokedex.png"
+          src="./assets/pokedex.png"
           alt="Not image found"
           class="mx-auto my-5"
         />
@@ -42,13 +42,8 @@
         </div>
         <div
           id="pokemon-filter-indicator"
-          class="text-white w-fit mt-10 border-white"
-        >
-          <div class="text-white">
-            <p>Searching by type:</p>
-            <div class="pokemon-type-tags pokemon-type-all">All</div>
-          </div>
-        </div>
+          class="text-white w-full mt-10 border-white"
+        ></div>
         <div
           id="pokemon-container"
           class="my-10 grid grid-cols-4 gap-6 mx-auto"
@@ -57,11 +52,16 @@
           id="page-indicator"
           class="flex items-center text-white mx-auto w-fit"
         >
-          <button id="back-btn" class="page-btn p-2 rounded-full hidden">
+          <button
+            id="back-btn"
+            class="font-bold page-btn p-2 rounded-full hidden"
+          >
             Back
           </button>
           <div id="page-indicator-number" class="p-5">1</div>
-          <button id="next-btn" class="page-btn p-2 rounded-full">Next</button>
+          <button id="next-btn" class="font-bold page-btn p-2 rounded-full">
+            Next
+          </button>
         </div>
       </div>
     </div>

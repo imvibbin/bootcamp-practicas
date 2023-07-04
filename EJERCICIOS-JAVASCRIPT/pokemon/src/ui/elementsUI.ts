@@ -1,4 +1,4 @@
-class Dom {
+class ElementsUI {
   // SECTION: >> METHODS
   // NOTE: displaying a type tag on DOM
   async createTagTypeSearcher(
@@ -10,11 +10,11 @@ class Dom {
       if (type.name != `shadow` && type.name != `unknown`)
         divPokeTypeSearcher.innerHTML += `<div id="pokemon-type-${
           type.name
-        }" class="mx-auto w-full pokemon-type-tags pokemon-type-${
+        }" class="font-bold mx-auto w-full pokemon-type-tags pokemon-type-${
           type.name
         }">${type.name.charAt(0).toUpperCase()}${type.name.slice(1)}</div>`;
     }
-    mainPokeType.innerHTML += `<div id="pokemon-type-all" class="mt-5 mx-auto w-full pokemon-type-tags pokemon-type-all">All</div>`;
+    mainPokeType.innerHTML += `<div id="pokemon-type-all" class="font-bold mt-5 mx-auto w-full pokemon-type-tags pokemon-type-all">All</div>`;
   }
 
   // NOTE: displaying a pokemon for each pokemon on DOM
@@ -22,18 +22,18 @@ class Dom {
     const pokemonTypes = await this.pokeTypesDOM(pokemonsJson);
     let DOM_content = `<div class="card pokemon-id-${
       pokemonsJson.id
-    } bg-slate-800 text-center px-6 py-8 ring-5 ring-slate-900/5 shadow-xl rounded-lg text-white">
+    } font-bold bg-slate-800 text-center px-6 py-8 ring-5 ring-slate-900/5 shadow-xl rounded-lg text-white">
     <img src="${
       pokemonsJson.sprites.other["official-artwork"].front_default
     }" class="pokemon-img"></img>
-    <h2>${
+    <p class="font-bold">${
       pokemonsJson.name.charAt(0).toUpperCase() + pokemonsJson.name.slice(1)
-    }</h2>`;
+    }</p>`;
 
     let DOM_types = `<div class="pokemon-type">`;
     for (let type of pokemonTypes) {
       DOM_types += `
-      <div id="pokemon-type-${type}" class="pokemon-type-tags pokemon-type-${type}">${
+      <div id="pokemon-type-${type}" class="pokemon-type-tags pokemon-type-${type} font-bold">${
         type.charAt(0).toUpperCase() + type.slice(1)
       }</div>
     `;
@@ -45,27 +45,36 @@ class Dom {
 
   async createSearchFilterIndicator(pokemonType: string, pokemonName: string) {
     let filterIndicator = `
-    <div class="text-white">`;
+    <div class="text-white w-1/2">`;
 
     if (pokemonName != "") {
       filterIndicator += `
-      <p>Searching by name: </p> 
-      <div> ${pokemonName} </div>`;
+      <div class="flex w-full">
+        <p class="font-bold">Searching by name: </p> 
+        <div class="ml-3"> ${pokemonName} </div>
+      </div>`;
     }
 
     if (pokemonType == "") {
       filterIndicator += `
-      <p>Searching by type: </p> 
-      <div class="pokemon-type-tags pokemon-type-all"> All </div>`;
+      <div class="flex w-full">
+        <p class="font-bold">Searching by type: </p> 
+        <div class="ml-3 pokemon-type-tags pokemon-type-all font-bold">
+          All 
+        </div>
+      </div>`;
     } else {
       filterIndicator += `
-      <p>Searching by type: </p> 
-      <div class="pokemon-type-tags pokemon-type-${pokemonType}">
-        ${pokemonType.charAt(0).toUpperCase() + pokemonType.slice(1)}
+      <div class="flex w-full">
+        <p class="font-bold">Searching by type: </p> 
+        <div class="ml-3 pokemon-type-tags pokemon-type-${pokemonType}">
+          ${pokemonType.charAt(0).toUpperCase() + pokemonType.slice(1)}
+        </div>
       </div>`;
     }
 
     filterIndicator += `</div>`;
+    console.log(filterIndicator);
     return filterIndicator;
   }
 
@@ -78,4 +87,4 @@ class Dom {
   }
 }
 
-export default Dom;
+export default ElementsUI;

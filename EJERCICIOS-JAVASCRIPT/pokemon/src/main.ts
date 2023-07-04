@@ -1,16 +1,16 @@
 // SECTION: >> Imports
-import PokemonDisplay from "./scripts/display.ts";
-import Events from "./scripts/events.ts";
+import DisplayUI from "./ui/displayUI.ts";
+import EventsUI from "./ui/eventsUI.ts";
 
 class Main {
   // SECTION: >> Instances
-  private events = new Events();
-  private pokemonDisplay = new PokemonDisplay();
+  private _eventsUI = new EventsUI();
+  private _displayUI = new DisplayUI();
 
   constructor() {
     // NOTE: displaying all pokemon cards
-    this.events;
-    this.pokemonDisplay.displayOnLoad();
+    this._eventsUI;
+    this._displayUI.displayOnLoad();
   }
 }
 
