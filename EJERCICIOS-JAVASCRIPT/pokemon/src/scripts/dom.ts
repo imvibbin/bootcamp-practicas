@@ -43,6 +43,18 @@ class Dom {
     return DOM_content + DOM_types;
   }
 
+  async createSearchFilterIndicator(
+    pokemonType: string,
+    pokemonName: string,
+    filterIndicatorDOM: HTMLDivElement
+  ) {
+    filterIndicatorDOM.innerHTML = `<div class="text-white"> 
+      <p>Searching by: </p> 
+      <div class="pokemon-type-tags pokemon-type-${pokemonType}">
+        type.charAt(0).toUpperCase() + type.slice(1)
+    </div>`;
+  }
+
   // NOTE: getting all the type name of each pokemon
   async pokeTypesDOM(pokemonInfo: any) {
     const pokemonType = pokemonInfo.types.map(
