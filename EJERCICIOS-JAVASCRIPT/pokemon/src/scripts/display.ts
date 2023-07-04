@@ -20,7 +20,8 @@ class PokemonDisplay {
   async filterPokemonByType(
     firstLoad: boolean,
     pageNumber: number,
-    pokemonType: string
+    pokemonType: string,
+    searchByName: boolean
   ) {
     const pokemonList = await this.getPokemonsList(firstLoad);
     const pokemonListByType = pokemonList.filter((pokemonResult: any) => {
@@ -29,11 +30,9 @@ class PokemonDisplay {
         pokemonType === "all" || types.some((type: any) => type === pokemonType)
       );
     });
-    const finalPokemonList = await this.getPokemonsByPage(
-      pageNumber,
-      pokemonListByType
-    );
-    return finalPokemonList;
+    return !searchByName
+      ? await this.getPokemonsByPage(pageNumber, pokemonListByType)
+      : { pokemons: pokemonListByType };
   }
 
   // NOTE: filtering pokemon by name
@@ -47,8 +46,10 @@ class PokemonDisplay {
     const pokemonListByType = await this.filterPokemonByType(
       firstLoad,
       pageNumber,
-      pokemonType
+      pokemonType,
+      true
     );
+    console.log(pokemonListByType);
     const pokemonListByName = pokemonListByType.pokemons.filter(
       (pokemonInfo: any) => {
         return pokemonInfo.name
@@ -61,6 +62,7 @@ class PokemonDisplay {
       pokemonListByName.length != 0
         ? await this.getPokemonsByPage(pageNumber, pokemonListByName)
         : { pokemons: [], max_reached: true, no_match: true };
+
     return finalPokemonList;
   }
 
@@ -124,7 +126,7 @@ class PokemonDisplay {
   // NOTE: shows all pokemon types and pokemons
   async displayOnLoad() {
     await this.displayPokemonType();
-    const pokemonList = await this.filterPokemonByType(true, 1, "all");
+    const pokemonList = await this.filterPokemonByType(true, 1, "all", false);
     await this.displayPokemons(pokemonList);
   }
 }

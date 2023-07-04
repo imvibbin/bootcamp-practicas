@@ -43,16 +43,30 @@ class Dom {
     return DOM_content + DOM_types;
   }
 
-  async createSearchFilterIndicator(
-    pokemonType: string,
-    pokemonName: string,
-    filterIndicatorDOM: HTMLDivElement
-  ) {
-    filterIndicatorDOM.innerHTML = `<div class="text-white"> 
-      <p>Searching by: </p> 
+  async createSearchFilterIndicator(pokemonType: string, pokemonName: string) {
+    let filterIndicator = `
+    <div class="text-white">`;
+
+    if (pokemonName != "") {
+      filterIndicator += `
+      <p>Searching by name: </p> 
+      <div> ${pokemonName} </div>`;
+    }
+
+    if (pokemonType == "") {
+      filterIndicator += `
+      <p>Searching by type: </p> 
+      <div class="pokemon-type-tags pokemon-type-all"> All </div>`;
+    } else {
+      filterIndicator += `
+      <p>Searching by type: </p> 
       <div class="pokemon-type-tags pokemon-type-${pokemonType}">
-        type.charAt(0).toUpperCase() + type.slice(1)
-    </div>`;
+        ${pokemonType.charAt(0).toUpperCase() + pokemonType.slice(1)}
+      </div>`;
+    }
+
+    filterIndicator += `</div>`;
+    return filterIndicator;
   }
 
   // NOTE: getting all the type name of each pokemon

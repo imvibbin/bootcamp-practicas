@@ -1,21 +1,24 @@
 // SECTION: >> Imports
+import Dom from "./dom.ts";
 import PokemonDisplay from "./display.ts";
 
 class Events {
   // SECTION: >> Instances
+  private dom = new Dom();
   private pokemonDisplay = new PokemonDisplay();
 
   private clickedId: string[] = [];
   private clickedType: string = "";
   private firstPageLoad: boolean = false;
   private searchPokemonName: string = "";
+  private timeout: number = 0;
 
   private inputSearch = document.querySelector(
     "#input-search-bar"
   ) as HTMLInputElement;
-  private buttonSearch = document.querySelector(
-    "#button-search"
-  ) as HTMLButtonElement;
+  private pokemonFilterIndicator = document.querySelector(
+    "#pokemon-filter-indicator"
+  ) as HTMLDivElement;
 
   private pageIndicator = document.getElementById(
     "page-indicator-number"
@@ -44,10 +47,18 @@ class Events {
     });
 
     // NOTE: search pokemon by name
-    this.buttonSearch.addEventListener("click", async () => {
+
+    this.inputSearch.addEventListener("keyup", async () => {
       this.searchPokemonName = this.inputSearch.value;
       this.pageNumber = 1;
-      await this.updatePokemonDOM(this.pageNumber, this.firstPageLoad, "name");
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(async () => {
+        await this.updatePokemonDOM(
+          this.pageNumber,
+          this.firstPageLoad,
+          "name"
+        );
+      }, 300); // 500ms delay
     });
   }
 
@@ -89,9 +100,11 @@ class Events {
       pokemonList = await this.pokemonDisplay.filterPokemonByType(
         firstPageLoad,
         pageNumber,
-        this.clickedType == "" ? "all" : this.clickedType
+        this.clickedType == "" ? "all" : this.clickedType,
+        false
       );
     }
+    await this.showSearchFilters(this.clickedType, this.searchPokemonName);
     await this.updateDOM(pokemonList, pageNumber);
   }
 
@@ -99,6 +112,16 @@ class Events {
     await this.pokemonDisplay.displayPokemons(pokemonList);
     this.pageIndicator.innerHTML = pageNumber.toString();
     await this.checkPageButtons(pageNumber, pokemonList.max_reached);
+  }
+
+  async showSearchFilters(pokemonType: string, pokemonName: string) {
+    console.log(`Type: ${pokemonType} heh`);
+    const filterIndicator = await this.dom.createSearchFilterIndicator(
+      pokemonType == "" ? "all" : pokemonType,
+      pokemonName
+    );
+    console.log(filterIndicator);
+    this.pokemonFilterIndicator.innerHTML = filterIndicator;
   }
 }
 
