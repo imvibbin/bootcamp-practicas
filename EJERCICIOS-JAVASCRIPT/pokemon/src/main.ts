@@ -1,6 +1,6 @@
 // SECTION: >> Imports
 import DisplayUI from "./ui/displayUI.ts";
-import EventsUI from "./ui/eventsUI.ts";
+import EventsUI from "./ui/indexEventsUI.ts";
 
 class Main {
   // SECTION: >> Instances

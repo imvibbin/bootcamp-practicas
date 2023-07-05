@@ -1,9 +1,11 @@
 import ElementsUI from "./elementsUI.ts";
 import PokemonService from "../services/pokemonService.ts";
+import PokemonApi from "../api/pokemonApi.ts";
 
 class DisplayUI {
   private _elementsUI = new ElementsUI();
   private _pokemonService = new PokemonService();
+  private _pokemonApi = new PokemonApi();
 
   private mainPokeType = document.getElementById(
     "pokemon-type-tag"
@@ -25,11 +27,13 @@ class DisplayUI {
 
   // NOTE: displays all pokemon type tags on DOM
   async displayPokemonType() {
-    const pokemonsTypesJSON = localStorage.getItem("pokemon_types")
+    if (localStorage.getItem("pokemon_types")) await this._pokemonApi.getPokemonTypes();
+    const pokemonTypeList = localStorage.getItem("pokemon_types")
       ? JSON.parse(localStorage.getItem("pokemon_types") as string)
       : null;
+    console.log(pokemonTypeList)
     await this._elementsUI.createTagTypeSearcher(
-      pokemonsTypesJSON,
+      pokemonTypeList,
       this.mainPokeType,
       this.divPokeTypeSearcher
     );
@@ -40,6 +44,7 @@ class DisplayUI {
     const pokemonFilterIndicator = document.querySelector(
       "#pokemon-filter-indicator"
     ) as HTMLDivElement;
+
     await this.displayPokemonType();
     const pokemonList = await this._pokemonService.filterPokemonByType(
       true,
