@@ -15,15 +15,17 @@ class EventsUI {
   private _searchPokemonName: string = "";
   private _timeout: any = 0;
 
+  // NOTE: search elements
   private _inputSearch = document.querySelector(
-    "#input-search-bar"
+    "#input-search-bar",
   ) as HTMLInputElement;
   private _pokemonFilterIndicator = document.querySelector(
-    "#pokemon-filter-indicator"
+    "#pokemon-filter-indicator",
   ) as HTMLDivElement;
 
+  // NOTE: page indicator elements
   private _pageIndicator = document.getElementById(
-    "page-indicator-number"
+    "page-indicator-number",
   ) as HTMLElement;
   private _nextPageBtn = document.getElementById("next-btn") as HTMLElement;
   private _backPageBtn = document.getElementById("back-btn") as HTMLElement;
@@ -32,9 +34,10 @@ class EventsUI {
   constructor() {
     // SECTION: >> EventListener
     // NOTE: when click on tag type execute handleTypeTagClick()
-    document.body.addEventListener("click", (event) =>
-      this.handleTypeTagClick(event)
-    );
+    document.body.addEventListener("click", async (event) => {
+      await this.handleTypeTagClick(event);
+      await this.removeFilters(event);
+    });
 
     // NOTE: show next 20 pokemons
     this._nextPageBtn.addEventListener("click", async () => {
@@ -42,7 +45,7 @@ class EventsUI {
       await this.updatePokemonDOM(
         this._pageNumber,
         this._firstPageLoad,
-        "type"
+        "type",
       );
     });
 
@@ -52,7 +55,7 @@ class EventsUI {
       await this.updatePokemonDOM(
         this._pageNumber,
         this._firstPageLoad,
-        "type"
+        "type",
       );
     });
 
@@ -66,7 +69,7 @@ class EventsUI {
         await this.updatePokemonDOM(
           this._pageNumber,
           this._firstPageLoad,
-          "name"
+          "name",
         );
       }, 300); // 500ms delay
     });
@@ -82,10 +85,11 @@ class EventsUI {
     ) {
       this._pageNumber = 1;
       this._clickedType = this._clickedId[this._clickedId.length - 1];
+      console.log(this._clickedType)
       await this.updatePokemonDOM(
         this._pageNumber,
         this._firstPageLoad,
-        "name"
+        "name",
       );
     }
   }
@@ -103,7 +107,7 @@ class EventsUI {
   async updatePokemonDOM(
     _pageNumber: number,
     _firstPageLoad: boolean,
-    filterType: string
+    filterType: string,
   ) {
     let pokemonList;
     if (filterType === "name") {
@@ -111,16 +115,19 @@ class EventsUI {
         _firstPageLoad,
         _pageNumber,
         this._searchPokemonName,
-        this._clickedType == "" ? "all" : this._clickedType
+        this._clickedType == "" ? "all" : this._clickedType,
       );
-    } else if (filterType === "type") {
+    }
+
+    if (filterType === "type") {
       pokemonList = await this._pokemonService.filterPokemonByType(
         _firstPageLoad,
         _pageNumber,
         this._clickedType == "" ? "all" : this._clickedType,
-        false
+        false,
       );
     }
+    console.log(`Type: ${this._clickedType}`);
     await this.showSearchFilters(this._clickedType, this._searchPokemonName);
     await this.updateDOM(pokemonList, _pageNumber);
   }
@@ -133,13 +140,28 @@ class EventsUI {
 
   // TODO: Create buttons to delete filters
   async showSearchFilters(pokemonType: string, pokemonName: string) {
-    console.log(`Type: ${pokemonType} heh`);
     const filterIndicator = await this._elementsUI.createSearchFilterIndicator(
       pokemonType == "" ? "all" : pokemonType,
-      pokemonName
+      pokemonName,
     );
-    console.log(filterIndicator);
     this._pokemonFilterIndicator.innerHTML = filterIndicator;
+  }
+
+  async removeFilters(event: any) {
+    let typeRequest = "";
+    const targetId = (event.target as HTMLElement).id;
+    const makeRequest =
+      targetId != "remove-filter" && targetId != "remove-name" ? false : true;
+    this._pageNumber = 1;
+    this._clickedType = "all";
+    if (targetId == "remove-filter") typeRequest = "all";
+    if (targetId == "remove-name") typeRequest = "name";
+    if (makeRequest)
+      await this.updatePokemonDOM(
+        this._pageNumber,
+        this._firstPageLoad,
+        typeRequest,
+      );
   }
 }
 

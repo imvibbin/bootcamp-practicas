@@ -38,7 +38,6 @@ class PokemonService {
       pokemonType,
       true
     );
-    console.log(pokemonListByType);
     const pokemonListByName = pokemonListByType.pokemons.filter(
       (pokemonInfo: any) => {
         return pokemonInfo.name
@@ -46,7 +45,6 @@ class PokemonService {
           .includes(pokemonName.toLowerCase());
       }
     );
-
     const finalPokemonList =
       pokemonListByName.length != 0
         ? await this._listGenerator.getPokemonsByPage(

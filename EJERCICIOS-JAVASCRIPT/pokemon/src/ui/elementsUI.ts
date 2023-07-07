@@ -53,9 +53,12 @@ class ElementsUI {
 
     if (pokemonName != "") {
       filterIndicator += `
-      <div class="flex w-full">
+      <div class="flex justify-start item-center w-full">
         <p class="font-bold">Searching by name: </p> 
         <div class="ml-3"> ${pokemonName} </div>
+        <div class="inline-block text-center align-middle border-white">
+          <i id="remove-name" class="ml-3 cursor-pointer fa-solid fa-xmark h-50"></i>
+        </div>
       </div>`;
     }
 
@@ -75,14 +78,13 @@ class ElementsUI {
           ${pokemonType.charAt(0).toUpperCase() + pokemonType.slice(1)}
         </div>
         <div class="inline-block text-center align-middle border-white">
-          <i class="ml-3 fa-solid fa-xmark h-50"></i>
+          <i id="remove-filter" class="ml-3 cursor-pointer fa-solid fa-xmark h-50"></i>
         </div>
       </div>`;
     }
 
     filterIndicator += `
     </div>`;
-    console.log(filterIndicator);
     return filterIndicator;
   }
 
