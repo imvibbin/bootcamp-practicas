@@ -27,11 +27,11 @@ class DisplayUI {
 
   // NOTE: displays all pokemon type tags on DOM
   async displayPokemonType() {
-    if (localStorage.getItem("pokemon_types")) await this._pokemonApi.getPokemonTypes();
+    if (localStorage.getItem("pokemon_types"))
+      await this._pokemonApi.getPokemonTypes();
     const pokemonTypeList = localStorage.getItem("pokemon_types")
       ? JSON.parse(localStorage.getItem("pokemon_types") as string)
       : null;
-    console.log(pokemonTypeList)
     await this._elementsUI.createTagTypeSearcher(
       pokemonTypeList,
       this.mainPokeType,

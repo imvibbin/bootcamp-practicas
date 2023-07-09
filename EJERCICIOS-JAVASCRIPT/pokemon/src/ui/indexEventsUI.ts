@@ -9,23 +9,23 @@ class EventsUI {
   private _displayUI = new DisplayUI();
   private _pokemonService = new PokemonService();
 
-  private _clickedId: string[] = [];
-  private _clickedType: string = "";
+  private _clickedTagId: string[] = [];
+  private _pokemonType: string = "";
   private _firstPageLoad: boolean = false;
   private _searchPokemonName: string = "";
   private _timeout: any = 0;
 
   // NOTE: search elements
   private _inputSearch = document.querySelector(
-    "#input-search-bar",
+    "#input-search-bar"
   ) as HTMLInputElement;
   private _pokemonFilterIndicator = document.querySelector(
-    "#pokemon-filter-indicator",
+    "#pokemon-filter-indicator"
   ) as HTMLDivElement;
 
   // NOTE: page indicator elements
   private _pageIndicator = document.getElementById(
-    "page-indicator-number",
+    "page-indicator-number"
   ) as HTMLElement;
   private _nextPageBtn = document.getElementById("next-btn") as HTMLElement;
   private _backPageBtn = document.getElementById("back-btn") as HTMLElement;
@@ -45,7 +45,7 @@ class EventsUI {
       await this.updatePokemonDOM(
         this._pageNumber,
         this._firstPageLoad,
-        "type",
+        "type"
       );
     });
 
@@ -55,21 +55,21 @@ class EventsUI {
       await this.updatePokemonDOM(
         this._pageNumber,
         this._firstPageLoad,
-        "type",
+        "type"
       );
     });
 
     // NOTE: search pokemon by name
-
     this._inputSearch.addEventListener("keyup", async () => {
       this._searchPokemonName = this._inputSearch.value;
       this._pageNumber = 1;
       clearTimeout(this._timeout);
+      console.log(`EVENT keyup -> Type: ${this._pokemonType}`);
       this._timeout = setTimeout(async () => {
         await this.updatePokemonDOM(
           this._pageNumber,
           this._firstPageLoad,
-          "name",
+          "name"
         );
       }, 300); // 500ms delay
     });
@@ -78,18 +78,17 @@ class EventsUI {
   // SECTION: >> Methods
   // NOTE: search pokemon by clicked type tag
   async handleTypeTagClick(event: MouseEvent) {
-    this._clickedId = (event.target as Element).id.split("-");
+    this._clickedTagId = (event.target as Element).id.split("-");
     if (
-      this._clickedId.includes("pokemon") &&
-      this._clickedId.includes("type")
+      this._clickedTagId.includes("pokemon") &&
+      this._clickedTagId.includes("type")
     ) {
       this._pageNumber = 1;
-      this._clickedType = this._clickedId[this._clickedId.length - 1];
-      console.log(this._clickedType)
+      this._pokemonType = this._clickedTagId[this._clickedTagId.length - 1];
       await this.updatePokemonDOM(
         this._pageNumber,
         this._firstPageLoad,
-        "name",
+        "name"
       );
     }
   }
@@ -105,63 +104,70 @@ class EventsUI {
   // NOTE: updates de pokemon cards depending of the type of filter (NAME or TYPE)
   // TODO: when there's no match by name show it on DOM
   async updatePokemonDOM(
-    _pageNumber: number,
-    _firstPageLoad: boolean,
-    filterType: string,
+    pageNumber: number,
+    firstPageLoad: boolean,
+    filterType: string
   ) {
     let pokemonList;
+    const type = this._pokemonType === "" ? "all" : this._pokemonType;
+
     if (filterType === "name") {
       pokemonList = await this._pokemonService.filterPokemonByName(
-        _firstPageLoad,
-        _pageNumber,
+        firstPageLoad,
+        pageNumber,
         this._searchPokemonName,
-        this._clickedType == "" ? "all" : this._clickedType,
+        type
       );
-    }
-
-    if (filterType === "type") {
+    } else if (filterType === "type") {
       pokemonList = await this._pokemonService.filterPokemonByType(
-        _firstPageLoad,
-        _pageNumber,
-        this._clickedType == "" ? "all" : this._clickedType,
-        false,
+        firstPageLoad,
+        pageNumber,
+        type,
+        false
       );
     }
-    console.log(`Type: ${this._clickedType}`);
-    await this.showSearchFilters(this._clickedType, this._searchPokemonName);
-    await this.updateDOM(pokemonList, _pageNumber);
+
+    await this.showSearchFilters(type, this._searchPokemonName);
+    await this.updateDOM(pokemonList, pageNumber);
   }
 
-  async updateDOM(pokemonList: any, _pageNumber: number) {
+  async updateDOM(pokemonList: any, pageNumber: number) {
     await this._displayUI.displayPokemons(pokemonList);
-    this._pageIndicator.innerHTML = _pageNumber.toString();
-    await this.checkPageButtons(_pageNumber, pokemonList.max_reached);
+    this._pageIndicator.innerHTML = pageNumber.toString();
+    await this.checkPageButtons(pageNumber, pokemonList.max_reached);
   }
 
-  // TODO: Create buttons to delete filters
   async showSearchFilters(pokemonType: string, pokemonName: string) {
     const filterIndicator = await this._elementsUI.createSearchFilterIndicator(
       pokemonType == "" ? "all" : pokemonType,
-      pokemonName,
+      pokemonName
     );
     this._pokemonFilterIndicator.innerHTML = filterIndicator;
   }
 
+  // TODO: Create buttons to delete filters
   async removeFilters(event: any) {
     let typeRequest = "";
     const targetId = (event.target as HTMLElement).id;
     const makeRequest =
       targetId != "remove-filter" && targetId != "remove-name" ? false : true;
-    this._pageNumber = 1;
-    this._clickedType = "all";
-    if (targetId == "remove-filter") typeRequest = "all";
-    if (targetId == "remove-name") typeRequest = "name";
-    if (makeRequest)
-      await this.updatePokemonDOM(
-        this._pageNumber,
-        this._firstPageLoad,
-        typeRequest,
+    if (targetId == "remove-filter") this._pokemonType = "all";
+    if (targetId == "remove-name") {
+      this._searchPokemonName = "";
+      this._inputSearch.value = "";
+    }
+    if (makeRequest) {
+      console.log(`Type to cancel: ${typeRequest}`);
+      console.log(
+        `EVENT remove filters by ${targetId} -> ${this._pokemonType}`
       );
+      await this.updatePokemonDOM(
+        (this._pageNumber = 1),
+        this._firstPageLoad,
+        "name"
+      );
+    }
+    return;
   }
 }
 
