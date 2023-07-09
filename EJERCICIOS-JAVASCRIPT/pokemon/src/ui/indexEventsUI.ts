@@ -101,16 +101,13 @@ class EventsUI {
     else this._nextPageBtn.classList.remove("hidden");
   }
 
-  // NOTE: updates de pokemon cards depending of the type of filter (NAME or TYPE)
-  // TODO: when there's no match by name show it on DOM
-  async updatePokemonDOM(
+  async getPokemonList(
     pageNumber: number,
     firstPageLoad: boolean,
     filterType: string
   ) {
-    let pokemonList;
     const type = this._pokemonType === "" ? "all" : this._pokemonType;
-
+    let pokemonList;
     if (filterType === "name") {
       pokemonList = await this._pokemonService.filterPokemonByName(
         firstPageLoad,
@@ -127,22 +124,42 @@ class EventsUI {
       );
     }
 
-    await this.showSearchFilters(type, this._searchPokemonName);
-    await this.updateDOM(pokemonList, pageNumber);
+    return { pokemons: pokemonList, pokemonType: type };
   }
 
+  // NOTE: adding the pokemon cards and changing the page indicator
   async updateDOM(pokemonList: any, pageNumber: number) {
     await this._displayUI.displayPokemons(pokemonList);
     this._pageIndicator.innerHTML = pageNumber.toString();
     await this.checkPageButtons(pageNumber, pokemonList.max_reached);
   }
 
+  // NOTE: adding the selected filter options
   async showSearchFilters(pokemonType: string, pokemonName: string) {
     const filterIndicator = await this._elementsUI.createSearchFilterIndicator(
       pokemonType == "" ? "all" : pokemonType,
       pokemonName
     );
     this._pokemonFilterIndicator.innerHTML = filterIndicator;
+  }
+
+  // NOTE: updates de pokemon cards depending of the type of filter (NAME or TYPE)
+  // TODO: when there's no match by name show it on DOM
+  async updatePokemonDOM(
+    pageNumber: number,
+    firstPageLoad: boolean,
+    filterType: string
+  ) {
+    const pokemonList = await this.getPokemonList(
+      pageNumber,
+      firstPageLoad,
+      filterType
+    );
+    await this.showSearchFilters(
+      pokemonList.pokemonType,
+      this._searchPokemonName
+    );
+    await this.updateDOM(pokemonList.pokemons, pageNumber);
   }
 
   // TODO: Create buttons to delete filters
