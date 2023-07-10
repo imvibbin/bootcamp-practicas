@@ -162,7 +162,6 @@ class EventsUI {
     await this.updateDOM(pokemonList.pokemons, pageNumber);
   }
 
-  // TODO: Create buttons to delete filters
   async removeFilters(event: any) {
     let typeRequest = "";
     const targetId = (event.target as HTMLElement).id;

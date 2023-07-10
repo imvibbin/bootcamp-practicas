@@ -55,6 +55,13 @@ class PokemonService {
 
     return finalPokemonList;
   }
+
+  async getPokemonTypeNames(pokemonInfo: any) {
+    const pokemonType = pokemonInfo.types.map(
+      (element: any) => element.type.name
+    );
+    return pokemonType;
+  }
 }
 
 export default PokemonService;
