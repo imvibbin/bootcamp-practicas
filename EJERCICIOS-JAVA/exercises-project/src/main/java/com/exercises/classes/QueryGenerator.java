@@ -37,26 +37,26 @@ public class QueryGenerator {
     // Method to generate the SELECT query
     public String generateQuery(String DB_TABLE1, String typeOfQueryToGenerate) {
         String selectedElement = "";
-        boolean firstStepCompleted = true;
+        boolean firstStepCompleted;
         boolean finalStepCompleted = false;
 
         do {
             // Get available options to choose from and prompt the user
-            System.out.println("SELECTED QUERY TYPE: " + typeOfQueryToGenerate);
+            System.out.println("SELECTED QUERY TYPE: " + typeOfQueryToGenerate.toUpperCase());
             if (typeOfQueryToGenerate.equals("select"))
                 selectedElement = this.selectQueryGenerator.selectQueryPrompts(this.chosenElements);
             if (typeOfQueryToGenerate.equals("insert"))
                 selectedElement = this.insertQueryGenerator.insertQueryPrompts(this.chosenElements);
 
-            System.out.println("SELECTED ELEMENT: " + selectedElement);
             // Check if the selected element is already chosen
             if (this.chosenElements.contains(selectedElement)) {
                 System.err.println(">> Element already selected");
                 firstStepCompleted = false;
             } else {
                 // Validate the selected element
-                if (checkElementChosen(selectedElement)) {
-                    System.out.println(checkElementChosen(selectedElement));
+                if (!checkElementChosen(selectedElement)) {
+                    firstStepCompleted = false;
+                } else {
                     // Check if "all" is already chosen and prevent adding additional elements
                     if (this.chosenElements.size() >= 1 && !this.chosenElements.contains("all") && selectedElement.equals("all")) {
                         firstStepCompleted = false;
@@ -79,6 +79,7 @@ public class QueryGenerator {
                 do {
                     // Ask if the user wants to add another element
                     System.out.println("Do you want to add another element? Yes / No");
+                    System.out.print("--> ");
                     String yesOrNo = sc.nextLine().toLowerCase();
                     if (yesOrNo.equals("yes") || yesOrNo.equals("no")) {
                         askIfYesOrNoAgain = false;

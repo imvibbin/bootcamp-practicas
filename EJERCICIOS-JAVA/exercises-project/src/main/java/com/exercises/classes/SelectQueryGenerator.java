@@ -28,6 +28,7 @@ public class SelectQueryGenerator {
         String availableOptionsToChoose = this.queryGenerator.concatenateElements(chosenElements, AVAILABLE_ELEMENTS);
         System.out.println("What elements do you want to show?");
         System.out.println(">> Select between these options: " + availableOptionsToChoose);
+        System.out.print("--> ");
         return sc.nextLine().toLowerCase();
     }
 
