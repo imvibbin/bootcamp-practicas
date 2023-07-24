@@ -1,9 +1,13 @@
 package com.exercises;
 
 import com.exercises.classes.DatabaseConfig;
+import com.exercises.classes.QueryGenerator;
 import com.exercises.classes.SelectQueryGenerator;
 
+import java.sql.Array;
 import java.sql.Connection;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 import java.sql.SQLException;
 import java.sql.DriverManager;
@@ -21,17 +25,22 @@ public class MainDB {
 
         // Initialize Scanner
         try (Scanner sc = new Scanner(System.in)) {
+            QueryGenerator queryGenerator = new QueryGenerator(sc, db);
             System.out.println("WELCOME TO JDBC!");
             String selectedQueryType;
             do {
                 System.out.println("What type of query do you want to execute?");
                 System.out.println(">> Select between these options: Create / Read / Update / Delete");
+                System.out.print("--> ");
                 selectedQueryType = sc.nextLine().toLowerCase();
-            } while (!selectedQueryType.equals("read"));
+                if (checkElementChosen(selectedQueryType)) break;
+                else System.err.println(">> Please select a valid option");
+            } while (true);
 
             // Create a new instance of SelectQueryGenerator
-            SelectQueryGenerator queryGenerator = new SelectQueryGenerator(sc);
-            System.out.println(queryGenerator.generateSelectQuery(db.getDbTable()));
+            System.out.println(queryGenerator.generateQuery(
+                    db.getDbTable(),
+                    selectedQueryType.equals("read") ? "select" : selectedQueryType.equals("create") ? "insert" : selectedQueryType));
 
             // DB connection and other operations (keep as is)
             connection = DriverManager.getConnection(db.getDbUrl(), db.getDbUser(), db.getDbPassword());
@@ -41,5 +50,10 @@ public class MainDB {
         } catch (SQLException e) {
             System.err.println("Connection failed: " + e.getMessage());
         }
+    }
+
+    public static boolean checkElementChosen(String selectedElement) {
+        List<String> elementsToChoose = Arrays.asList("create", "insert", "read", "select", "update", "delete");
+        return elementsToChoose.contains(selectedElement);
     }
 }
