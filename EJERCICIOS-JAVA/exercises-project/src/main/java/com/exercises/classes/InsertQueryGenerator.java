@@ -30,12 +30,12 @@ public class InsertQueryGenerator {
         String availableOptionsToChoose = this.queryGenerator.concatenateElements(chosenElements, AVAILABLE_ELEMENTS);
         System.out.println("What elements do you want to show?");
         System.out.println(">> Select between these options: " + availableOptionsToChoose);
+        System.out.print("--> ");
         return sc.nextLine().toLowerCase();
     }
 
     public List<String> insertQueryValues(List<String> chosenOptions) {
         int index = 0;
-        boolean invalidValue;
         boolean valueIsAll = chosenOptions.contains("all");
         System.out.println("Add the elements that you want add:");
         do {
@@ -50,7 +50,7 @@ public class InsertQueryGenerator {
                         + chosenOptions.get(index).substring(1)
                         + ": ");
             }
-            String elementToAdd = sc.nextLine().toLowerCase();
+            String elementToAdd = sc.nextLine();
             if (checkInvalidValue(elementToAdd)) {
                 System.err.print("\n>> Don't leave a blank space\n");
             } else {

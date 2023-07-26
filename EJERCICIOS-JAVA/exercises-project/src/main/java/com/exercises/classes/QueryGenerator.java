@@ -16,22 +16,19 @@ public class QueryGenerator {
     // Scanner to read user input and list to store chosen elements
     private final Scanner sc;
     private final List<String> chosenElements;
-    private final DatabaseConfig databaseConfig;
 
     private final SelectQueryGenerator selectQueryGenerator;
     private final InsertQueryGenerator insertQueryGenerator;
+    private UpdateQueryGenerator updateQueryGenerator;
+    private DeleteQueryGenerator deleteQueryGenerator;
 
-    //    private UpdateQueryGenerator updateQueryGenerator;
-//    private DeleteQueryGenerator deleteQueryGenerator;
-    // Constructor to initialize the SelectQueryGenerator
     public QueryGenerator(Scanner scanner, DatabaseConfig databaseConfig) {
         this.sc = scanner;
         this.chosenElements = new ArrayList<>();
-        this.databaseConfig = databaseConfig;
         this.selectQueryGenerator = new SelectQueryGenerator(this.sc, this);
         this.insertQueryGenerator = new InsertQueryGenerator(this.sc, this, databaseConfig);
-//        this.updateQueryGenerator = new UpdateQueryGenerator();
-//        this.deleteQueryGenerator = new DeleteQueryGenerator();
+        this.updateQueryGenerator = new UpdateQueryGenerator(this.sc, this, databaseConfig);
+        this.deleteQueryGenerator = new DeleteQueryGenerator();
     }
 
     // Method to generate the SELECT query
@@ -42,13 +39,11 @@ public class QueryGenerator {
 
         do {
             // Get available options to choose from and prompt the user
-            System.out.println("SELECTED QUERY TYPE: " + typeOfQueryToGenerate);
             if (typeOfQueryToGenerate.equals("select"))
                 selectedElement = this.selectQueryGenerator.selectQueryPrompts(this.chosenElements);
             if (typeOfQueryToGenerate.equals("insert"))
                 selectedElement = this.insertQueryGenerator.insertQueryPrompts(this.chosenElements);
 
-            System.out.println("SELECTED ELEMENT: " + selectedElement);
             // Check if the selected element is already chosen
             if (this.chosenElements.contains(selectedElement)) {
                 System.err.println(">> Element already selected");
@@ -56,7 +51,6 @@ public class QueryGenerator {
             } else {
                 // Validate the selected element
                 if (checkElementChosen(selectedElement)) {
-                    System.out.println(checkElementChosen(selectedElement));
                     // Check if "all" is already chosen and prevent adding additional elements
                     if (this.chosenElements.size() >= 1 && !this.chosenElements.contains("all") && selectedElement.equals("all")) {
                         firstStepCompleted = false;
@@ -91,20 +85,23 @@ public class QueryGenerator {
         } while (!finalStepCompleted);
 
         // Concatenate the chosen elements into the SELECT query
-        String generatedQuery = "";
-        if (typeOfQueryToGenerate.equals("select"))
-            generatedQuery = this.selectQueryGenerator.generateSelectQuery(DB_TABLE1, this.chosenElements);
-        if (typeOfQueryToGenerate.equals("insert")) {
-            List<String> elementsToInsert = this.insertQueryGenerator.insertQueryValues(this.chosenElements);
-            generatedQuery = this.insertQueryGenerator.generateInsertQuery(DB_TABLE1, this.chosenElements, elementsToInsert);
-        }
-        if (typeOfQueryToGenerate.equals("update"))
-            generatedQuery = this.selectQueryGenerator.generateSelectQuery(DB_TABLE1, this.chosenElements);
-        if (typeOfQueryToGenerate.equals("delete"))
-            generatedQuery = this.selectQueryGenerator.generateSelectQuery(DB_TABLE1, this.chosenElements);
-        return generatedQuery;
+        return getGeneratedQuery(typeOfQueryToGenerate, DB_TABLE1);
     }
 
+    private String getGeneratedQuery(String typeOfQueryToGenerate, String DB_TABLE1) {
+        if (typeOfQueryToGenerate.equals("select"))
+            return this.selectQueryGenerator.generateSelectQuery(DB_TABLE1, this.chosenElements);
+        if (typeOfQueryToGenerate.equals("insert")) {
+            List<String> elementsToInsert = this.insertQueryGenerator.insertQueryValues(this.chosenElements);
+            return this.insertQueryGenerator.generateInsertQuery(DB_TABLE1, this.chosenElements, elementsToInsert);
+        }
+        if (typeOfQueryToGenerate.equals("update"))
+            return this.selectQueryGenerator.generateSelectQuery(DB_TABLE1, this.chosenElements);
+        if (typeOfQueryToGenerate.equals("delete"))
+            return this.selectQueryGenerator.generateSelectQuery(DB_TABLE1, this.chosenElements);
+
+        return "No query generated";
+    }
     // Method to check if the selected element is valid
     private boolean checkElementChosen(String selectedElement) {
         List<String> elementToChoose = Arrays.asList("all", "name", "surname", "location");
